@@ -12,6 +12,7 @@
 		<meta name="keywords" content="why, record, company, music, edm, techno, idm, experimental, whythough" />
 		<meta property="og:image" content="#">
 		<meta property="og:title" content="WHY? Record Company">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Title -->
         <title>WHY? Record Company</title>
@@ -38,6 +39,7 @@
 		</script>
     </head>
     <body class="demo-1 loading">
+    <!-- <div class="lds-ripple"><div></div><div></div></div> -->
         @section('sidebar')
             
         @show
@@ -45,5 +47,16 @@
         <div class="container">
             @yield('content')
         </div>
+        
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/charming.min.js"></script>
+        <script src="js/TweenMax.min.js"></script>
+        <script src="js/demo1.js"></script>
+        <script src="js/app.js"></script>
+        
+        <script>
+            // Preload all the images in the page
+            imagesLoaded(document.querySelectorAll('.intro__img, .reel__img'), {background: true}, () => document.body.classList.remove('loading'));
+        </script>
     </body>
 </html>

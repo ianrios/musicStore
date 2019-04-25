@@ -1,4 +1,4 @@
-<!-- Stored in resources/views/child.blade.php -->
+<!-- Stored in resources/views/index.blade.php -->
 
 @extends('layouts.app')
 
@@ -7,14 +7,14 @@
 @section('sidebar')
     @parent
 
-    
+
 @endsection
 
 @section('content')
 
     <main>
         <div class="content content--grid content--second">
-            <h3 class="content__title">WHY?<br/>Records</h3>
+        <h3 class="content__title">WHY?<br/>Records</h3>
             <p class="content__text">One morning, when Gregor Samsa woke from troubled
                 dreams, he found himself transformed in his bed into a horrible vermin. He
                 lay on his armour-like back, and if he lifted his head a little he could
@@ -25,15 +25,19 @@
                 <a class="social__link" href="https://twitter.com/">Tw</a>
                 <a class="social__link" href="https://facebook.com/">Fb</a>
             </div>
+
+            <div id="app">
+                <artists-component></artists-component>
+            </div>
+
+            <!-- 
             <div class="reel">
-                <img class="reel__img" src="img/12.jpg" alt="Some image" /><span
-                    class="reel__number">001</span>
-                <img class="reel__img" src="img/14.jpg" alt="Some image" /><span
-                    class="reel__number">002</span>
-                <img class="reel__img" src="img/18.jpg" alt="Some image" /><span
-                    class="reel__number">003</span>
-                <img class="reel__img" src="img/16.jpg" alt="Some image" /><span
-                    class="reel__number">004</span>
+                <img class="reel__img" src="img/whythough_4x6.jpg" alt="Some image">
+                <span class="reel__number">whythough?</span>
+                <img class="reel__img" src="img/dyl_pykl_4x6.jpg" alt="Some image">
+                <span class="reel__number">dyl_pykl</span>
+                <img class="reel__img" src="img/svnteen_4x6.jpg" alt="Some image">
+                <span class="reel__number">svnteen</span>
             </div>
             <div class="select">
                 <h4 class="select__heading">select</h4>
@@ -41,8 +45,12 @@
                 <a class="select__item">individuals</a>
                 <a class="select__item">groups</a>
             </div>
+            -->
             <button class="content__back" aria-label="Back to main view"></button>
         </div>
+
+
+
         <div class="content content--first"><!-- only rotated -->
             <div class="content__move"><!-- sized and moved -->
                 <div class="content__reverse">
@@ -72,15 +80,8 @@
             </div>
         </div>
     </main>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/charming.min.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/demo1.js"></script>
-    <script>
-    // Preload all the images in the page
-    imagesLoaded(document.querySelectorAll('.intro__img, .reel__img'), {background: true}, () => document.body.classList.remove('loading'));
-    </script>
-		
+
+
 
 
 @endsection
