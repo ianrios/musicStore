@@ -549,7 +549,7 @@ a:hover, a:focus {
 }
 
 .reel__number {
-	width: 40px;
+	width: 0px;
 	height: 300px;
 	display: block;
 	margin: 0 0 1.5rem auto;

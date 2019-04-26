@@ -21,9 +21,10 @@
         <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" type="text/css">
-		<link rel="stylesheet" href="https://use.typekit.net/vmz2gfd.css">
-
+        <!-- <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" type="text/css"> -->
+        <!-- <link rel="stylesheet" href="https://use.typekit.net/vmz2gfd.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
         <!-- Favicon -->
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -38,25 +39,33 @@
 			supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
 		</script>
     </head>
-    <body class="demo-1 loading">
-    <!-- <div class="lds-ripple"><div></div><div></div></div> -->
-        @section('sidebar')
-            
-        @show
+    <body>
 
-        <div class="container">
-            @yield('content')
+        <div id="app">
+            <!-- navbar -->
+            <nav class="nav">
+                <a class="navbar-brand" href="#">WHY? Record Company</a>
+                <a class="nav-link" href="#">Releases</a>
+                <a class="nav-link" href="#">Store</a>
+                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Contact Us</a>
+            </nav>
+            
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
-        
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/charming.min.js"></script>
-        <script src="js/TweenMax.min.js"></script>
-        <script src="js/demo1.js"></script>
+
+
+        <!-- <script src="js/imagesloaded.pkgd.min.js"></script> -->
+        <!-- <script src="js/charming.min.js"></script> -->
+        <!-- <script src="js/TweenMax.min.js"></script> -->
+        <!-- <script src="js/demo1.js"></script> -->
         <script src="js/app.js"></script>
         
-        <script>
+        <!-- <script>
             // Preload all the images in the page
             imagesLoaded(document.querySelectorAll('.intro__img, .reel__img'), {background: true}, () => document.body.classList.remove('loading'));
-        </script>
+        </script> -->
     </body>
 </html>
