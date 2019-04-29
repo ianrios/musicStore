@@ -2,5 +2,5 @@
 @section('title', 'Page Title') 
 @section('content')
 
-<home-component/>
+<p>coming soon</p>
 @endsection
