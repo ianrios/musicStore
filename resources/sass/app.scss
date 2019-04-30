@@ -1,8 +1,53 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
+body {
+    background-color: $rich_black;
+    color: $platinum;
+    margin: 0px;
+    text-decoration: none;
+    -webkit-appearance: none;
+    word-spacing: normal;
+    padding: 0px;
+    font-family: "Cormorant SC", serif;
+}
+a:-webkit-any-link,
+a:link,
+a:visited {
+    padding: 5px;
+    color: $cadet_grey;
+    cursor: pointer;
+    text-decoration: none;
+    word-wrap: normal;
+    display: inline-block;
+}
+a:hover {
+    color: $brass;
+}
+a:active,
+a.active {
+    color: $brass;
+    // color: $cadet_grey;
+    // color: $tyrian_purple;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+#artist_row {
+    height: 100%;
+    width: 100%;
+}
+#artist_list {
+    height: calc(100vh - 345px);
+    overflow-y: scroll;
+    width: 100%;
+}
+// #social_link {}
+// #artist_row {}

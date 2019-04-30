@@ -1,21 +1,14 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Releases Page Component</div>
-
-                    <div class="card-body">I'm the releases page component.</div>
-                </div>
-            </div>
-            <br>
-            <release-component
-                v-for="release in releases.slice().reverse()"
-                track-by="$index"
-                :key="release.id"
-                :release="release"
-            />
-        </div>
+        <h1>Releases</h1>
+        <p>tell me what i should do to add cool functionality to this page / how it can filter within all the releases</p>
+        <br>
+        <release-component
+            v-for="release in releases.slice().reverse()"
+            track-by="$index"
+            :key="release.id"
+            :release="release"
+        />
     </div>
 </template>
 
@@ -39,6 +32,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

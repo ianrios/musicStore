@@ -19,13 +19,14 @@
 	<title>WHY? Record Company</title>
 
 	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+SC|Cormorant+Unicase" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
 
 	<!-- Styles -->
-	<!-- <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" type="text/css"> -->
 	<link rel="stylesheet" href="{{ URL::asset('css/extend.css') }}" type="text/css">
-	<!-- <link rel="stylesheet" href="https://use.typekit.net/vmz2gfd.css"> -->
 	<link href="/css/app.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="css/base.css" type="text/css"> -->
+	<!-- <link rel="stylesheet" href="https://use.typekit.net/vmz2gfd.css"> -->
 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 	<!-- Favicon -->
@@ -48,7 +49,7 @@
 	<div id="app" class="container h-100">
 		<div class="h-100 justify-content-center align-items-center">
 			<!-- navbar -->
-			<nav class="nav">
+			<nav class="nav" id="header">
 				<a class="navbar-brand" href="/">WHY? Record Company</a>
 				<a class="nav-link" href="artists">Artists</a>
 				<a class="nav-link" href="releases">Releases</a>
@@ -56,7 +57,7 @@
 				<a class="nav-link" href="comingsoon">Services</a>
 				<a class="nav-link" href="comingsoon">Contact Us</a>
 			</nav>
-			<div class="container h-100">
+			<div class="container">
 				@yield('content')
 			</div>
 		</div>

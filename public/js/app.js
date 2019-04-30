@@ -1804,12 +1804,28 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Artists View Component mounted.");
-    console.log(_JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["artists"]);
   },
   components: {
     ArtistComponent: _ArtistComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -1901,7 +1917,6 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webp
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1919,7 +1934,6 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webp
   },
   mounted: function mounted() {
     console.log("Artists Home List Component mounted.");
-    console.log(this.artists);
   },
   computed: {
     filteredArtists: function filteredArtists() {
@@ -1975,25 +1989,11 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      artists: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["artists"],
       curr_view: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["curr_view"],
       label: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["label"],
       short_description: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["short_description"],
@@ -2039,6 +2039,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Release Component mounted.");
@@ -2062,13 +2072,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../JSON/data.json */ "./resources/js/JSON/data.json");
 var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../JSON/data.json */ "./resources/js/JSON/data.json", 1);
 /* harmony import */ var _ReleaseComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReleaseComponent.vue */ "./resources/js/components/ReleaseComponent.vue");
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -37393,17 +37396,29 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("a", { attrs: { href: _vm.artist.url } }, [
-      _vm._v(_vm._s(_vm.artist.name))
+    _c(
+      "a",
+      {
+        attrs: {
+          href: "#" + _vm.artist.anchor,
+          name: _vm.artist.anchor,
+          id: "artist_name_link"
+        }
+      },
+      [_vm._v(_vm._s(_vm.artist.name))]
+    ),
+    _vm._v(" "),
+    _c("p", { attrs: { id: "artist_short_desc" } }, [
+      _vm._v(_vm._s(_vm.artist.short_desc))
     ]),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.artist.short_desc))]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [_vm._v(_vm._s(_vm.artist.bio))]),
+    _c("div", { staticClass: "row", attrs: { id: "artist_bio" } }, [
+      _vm._v(_vm._s(_vm.artist.bio))
+    ]),
     _vm._v(" "),
     _c("img", {
       staticClass: "img-fluid",
-      attrs: { src: "/img/artists/" + _vm.artist.profile }
+      attrs: { src: "/img/artists/" + _vm.artist.profile, id: "artist_profile" }
     })
   ])
 }
@@ -37432,19 +37447,29 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container" },
-    _vm._l(_vm.artists, function(artist) {
-      return _c(
-        "div",
-        { key: artist.name, attrs: { href: artist.url, id: "artist_name" } },
-        [
-          _c("artist-component", { attrs: { artist: artist } }),
-          _vm._v(" "),
-          _c("br")
-        ],
-        1
-      )
-    }),
-    0
+    [
+      _c("h1", [_vm._v("Artists")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "tell me what i can do to add cool functionality to this page, filtering/general cool ways to display the info"
+        )
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.artists, function(artist) {
+        return _c(
+          "div",
+          { key: artist.name, attrs: { id: "artist_page_name" } },
+          [
+            _c("artist-component", { attrs: { artist: artist } }),
+            _vm._v(" "),
+            _c("br")
+          ],
+          1
+        )
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -37499,10 +37524,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37514,71 +37539,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      { staticClass: "btn-group" },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-link",
-            attrs: { type: "button", disabled: "" }
-          },
-          [_vm._v("select:")]
-        ),
-        _vm._v(" "),
-        _vm._l(3, function(n, i) {
-          return _c(
-            "button",
-            {
-              key: i,
-              staticClass: "btn btn-link",
-              class: { active: _vm.sel_view === i },
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  return _vm.update_view(i)
-                }
-              }
-            },
-            [_vm._v(_vm._s(_vm.artist_types[i]))]
-          )
-        })
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "overflow-auto", attrs: { id: "artist_list" } },
-      _vm._l(_vm.filteredArtists, function(artist) {
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("span", [_vm._v("select:")]),
+      _vm._v(" "),
+      _vm._l(3, function(n, i) {
         return _c(
-          "div",
-          { key: artist.id, staticClass: "row", attrs: { id: "artist_row" } },
-          [
-            _c("div", { staticClass: "col-8" }, [
+          "a",
+          {
+            key: i,
+            class: { active: _vm.sel_view === i },
+            attrs: { href: "#" },
+            on: {
+              click: function($event) {
+                return _vm.update_view(i)
+              }
+            }
+          },
+          [_vm._v(_vm._s(_vm.artist_types[i]))]
+        )
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "overflow-auto", attrs: { id: "artist_list" } },
+        _vm._l(_vm.filteredArtists, function(artist) {
+          return _c("div", { key: artist.id, attrs: { id: "artist_row" } }, [
+            _c("a", { attrs: { href: "/artists#" + artist.anchor } }, [
               _c("img", {
                 staticClass: "img-fluid mx-auto image-responsive",
                 attrs: {
                   src: "/img/artists/" + artist.profile,
-                  id: "img-testing-test",
+                  id: "artist_profile",
                   alt: artist.name
                 }
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-4" }, [
-              _c("span", [_vm._v(_vm._s(artist.name))])
-            ]),
-            _vm._v(" "),
-            _c("br")
-          ]
-        )
-      }),
-      0
-    )
-  ])
+            _c("a", { attrs: { href: "/artists#" + artist.anchor } }, [
+              _vm._v(_vm._s(artist.name))
+            ])
+          ])
+        }),
+        0
+      )
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37587,10 +37596,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37602,7 +37611,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container h-100" }, [
+  return _c("div", [
     _vm.curr_view == 0
       ? _c(
           "div",
@@ -37611,11 +37620,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "col" }, [
-              _c("div", {
-                staticStyle: { "background-image": "url(img/11.jpg)" }
-              }),
-              _vm._v(" "),
-              _c("h2", [_vm._v(_vm._s(_vm.label))]),
+              _c("h1", [_vm._v(_vm._s(_vm.label))]),
               _vm._v(" "),
               _c(
                 "a",
@@ -37633,39 +37638,16 @@ var render = function() {
           ]
         )
       : _vm.curr_view == 1
-      ? _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-4" }, [
+      ? _c(
+          "div",
+          { staticClass: "row" },
+          [
             _c("h3", [_vm._v(_vm._s(_vm.label))]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.short_description))]),
-            _vm._v(" "),
             _c(
-              "div",
-              _vm._l(_vm.label_socials, function(link) {
-                return _c(
-                  "a",
-                  {
-                    key: link.short_name,
-                    attrs: { href: link.url, id: "social_link" }
-                  },
-                  [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(link.short_name) +
-                        "\n                    "
-                    ),
-                    _c("br")
-                  ]
-                )
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
+              "a",
               {
-                staticClass: "btn btn-link",
-                attrs: { "aria-label": "Back to main view" },
+                attrs: { href: "#", "aria-label": "Back to main view" },
                 on: {
                   click: function($event) {
                     return _vm.updatePage(0)
@@ -37673,16 +37655,25 @@ var render = function() {
                 }
               },
               [_vm._v("back")]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-8" },
-            [_c("main-page-artists-list-component")],
-            1
-          )
-        ])
+            ),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.short_description))]),
+            _vm._v(" "),
+            _vm._l(_vm.label_socials, function(link) {
+              return _c(
+                "a",
+                {
+                  key: link.short_name,
+                  attrs: { href: link.url, id: "social_link" }
+                },
+                [_vm._v(_vm._s(link.short_name))]
+              )
+            }),
+            _vm._v(" "),
+            _c("main-page-artists-list-component")
+          ],
+          2
+        )
       : _vm._e()
   ])
 }
@@ -37693,10 +37684,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be& ***!
+  \*******************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37736,10 +37727,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true&":
-/*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7& ***!
+  \************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37751,44 +37742,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _vm._l(_vm.releases.slice().reverse(), function(release) {
-          return _c("release-component", {
-            key: release.id,
-            attrs: { "track-by": "$index", release: release }
-          })
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("h1", [_vm._v("Releases")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "tell me what i should do to add cool functionality to this page / how it can filter within all the releases"
+        )
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _vm._l(_vm.releases.slice().reverse(), function(release) {
+        return _c("release-component", {
+          key: release.id,
+          attrs: { "track-by": "$index", release: release }
         })
-      ],
-      2
-    )
-  ])
+      })
+    ],
+    2
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-8" }, [
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "card-header" }, [
-          _vm._v("Releases Page Component")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _vm._v("I'm the releases page component.")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -49938,7 +49916,7 @@ module.exports = function(module) {
 /*! exports provided: curr_view, label, short_description, roles, artists, releases, label_socials, label_streaming, default */
 /***/ (function(module) {
 
-module.exports = {"curr_view":0,"label":"WHY? Record Company","short_description":"If one examines precultural libertarianism, one is faced with a choice: either accept rationalism or conclude that context is a product of the masses, given that Marx’s essay on precultural libertarianism is invalid. The subject is contextualised into a precapitalist dematerialism that includes culture as a reality.","roles":["label manager","studio manager","web designer","graphic designer","marketing specialist","dj","producer","musician","mastering engineer","mixing engineer","singer","songwriter","vj"],"artists":[{"name":"whythough?","id":0,"num_artists":1,"url":"#","profile":"whythough_4x6.jpg","images":[],"short_desc":"High in fiber and good for your heart","bio":"whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."},{"name":"dyl_pykl","id":1,"num_artists":1,"url":"#","profile":"dyl_pykl_4x6.jpg","images":[],"short_desc":"Space, the final frontier. ","bio":"Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."},{"name":"svnteen","id":2,"num_artists":2,"url":"#","profile":"svnteen_4x6.jpg","images":[],"short_desc":"Busey ipsum dolor sit amet. ","bio":"Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."}],"releases":[{"name":"","id":"001","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":[""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"002","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"003","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"004","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"005","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"006","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"007","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"008","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"009","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"010","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"011","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"012","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"013","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"014","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"015","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"016","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"017","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"018","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"019","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"020","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"021","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Daegu Acid EP","id":"022","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}}],"label_socials":[{"name":"instagram","short_name":"in","url":"https://www.instagram.com/","icon":""},{"name":"facebook","short_name":"fb","url":"https://www.facebook.com/","icon":""},{"name":"twitter","short_name":"tw","url":"https://www.twitter.com/","icon":""},{"name":"discord","short_name":"dc","url":"https://www.discordapp.com/","icon":""}],"label_streaming":[{"name":"spotify","short_name":"sp","url":"https://open.spotify.com","icon":""},{"name":"apple music","short_name":"am","url":"","icon":""},{"name":"itunes","short_name":"it","url":"","icon":""},{"name":"beatport","short_name":"bp","url":"","icon":""},{"name":"bandcamp","short_name":"bc","url":"","icon":""},{"name":"soundcloud","short_name":"sc","url":"","icon":""},{"name":"choon","short_name":"ch","url":"","icon":""}]};
+module.exports = {"curr_view":0,"label":"WHY? Record Company","short_description":"If one examines precultural libertarianism, one is faced with a choice: either accept rationalism or conclude that context is a product of the masses, given that Marx’s essay on precultural libertarianism is invalid. The subject is contextualised into a precapitalist dematerialism that includes culture as a reality.","roles":["label manager","studio manager","web designer","graphic designer","marketing specialist","dj","producer","musician","mastering engineer","mixing engineer","singer","songwriter","vj"],"artists":[{"name":"whythough?","id":0,"num_artists":1,"anchor":"whythough","profile":"whythough_4x6.jpg","images":[],"short_desc":"High in fiber and good for your heart","bio":"whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."},{"name":"dyl_pykl","id":1,"num_artists":1,"anchor":"dyl_pykl","profile":"dyl_pykl_4x6.jpg","images":[],"short_desc":"Space, the final frontier. ","bio":"Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."},{"name":"svnteen","id":2,"num_artists":2,"anchor":"svnteen","profile":"svnteen_4x6.jpg","images":[],"short_desc":"Busey ipsum dolor sit amet. ","bio":"Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."}],"releases":[{"name":"","id":"001","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":[""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"002","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"003","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"004","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"005","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"006","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"007","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"008","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"009","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"010","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"011","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"012","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"013","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"014","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"015","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"016","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"017","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"018","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"019","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"020","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"021","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Daegu Acid EP","id":"022","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}}],"label_socials":[{"name":"instagram","short_name":"in","url":"https://www.instagram.com/","icon":""},{"name":"facebook","short_name":"fb","url":"https://www.facebook.com/","icon":""},{"name":"twitter","short_name":"tw","url":"https://www.twitter.com/","icon":""},{"name":"discord","short_name":"dc","url":"https://www.discordapp.com/","icon":""}],"label_streaming":[{"name":"spotify","short_name":"sp","url":"https://open.spotify.com","icon":""},{"name":"apple music","short_name":"am","url":"","icon":""},{"name":"itunes","short_name":"it","url":"","icon":""},{"name":"beatport","short_name":"bp","url":"","icon":""},{"name":"bandcamp","short_name":"bc","url":"","icon":""},{"name":"soundcloud","short_name":"sc","url":"","icon":""},{"name":"choon","short_name":"ch","url":"","icon":""}]};
 
 /***/ }),
 
@@ -50264,7 +50242,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true& */ "./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true&");
+/* harmony import */ var _MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074& */ "./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&");
 /* harmony import */ var _MainPageArtistsListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainPageArtistsListComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPageArtistsListComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -50276,11 +50254,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _MainPageArtistsListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "a4d9f074",
+  null,
   null
   
 )
@@ -50306,19 +50284,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true&":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true& ***!
-  \*************************************************************************************************************/
+/***/ "./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074& ***!
+  \*************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageArtistsListComponent.vue?vue&type=template&id=a4d9f074&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageArtistsListComponent_vue_vue_type_template_id_a4d9f074___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -50333,7 +50311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _MainPageComponent_vue_vue_type_template_id_5d01149a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true& */ "./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true&");
+/* harmony import */ var _MainPageComponent_vue_vue_type_template_id_5d01149a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainPageComponent.vue?vue&type=template&id=5d01149a& */ "./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&");
 /* harmony import */ var _MainPageComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainPageComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/MainPageComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -50345,11 +50323,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _MainPageComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _MainPageComponent_vue_vue_type_template_id_5d01149a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _MainPageComponent_vue_vue_type_template_id_5d01149a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _MainPageComponent_vue_vue_type_template_id_5d01149a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MainPageComponent_vue_vue_type_template_id_5d01149a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "5d01149a",
+  null,
   null
   
 )
@@ -50375,19 +50353,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true&":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true& ***!
-  \**************************************************************************************************/
+/***/ "./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a& ***!
+  \**************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageComponent_vue_vue_type_template_id_5d01149a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageComponent_vue_vue_type_template_id_5d01149a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageComponent_vue_vue_type_template_id_5d01149a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MainPageComponent.vue?vue&type=template&id=5d01149a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainPageComponent.vue?vue&type=template&id=5d01149a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageComponent_vue_vue_type_template_id_5d01149a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageComponent_vue_vue_type_template_id_5d01149a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainPageComponent_vue_vue_type_template_id_5d01149a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -50402,7 +50380,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ReleaseComponent_vue_vue_type_template_id_58cb17be_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true& */ "./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true&");
+/* harmony import */ var _ReleaseComponent_vue_vue_type_template_id_58cb17be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReleaseComponent.vue?vue&type=template&id=58cb17be& */ "./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&");
 /* harmony import */ var _ReleaseComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReleaseComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ReleaseComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -50414,11 +50392,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _ReleaseComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ReleaseComponent_vue_vue_type_template_id_58cb17be_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ReleaseComponent_vue_vue_type_template_id_58cb17be_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ReleaseComponent_vue_vue_type_template_id_58cb17be___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ReleaseComponent_vue_vue_type_template_id_58cb17be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "58cb17be",
+  null,
   null
   
 )
@@ -50444,19 +50422,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true&":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true& ***!
-  \*************************************************************************************************/
+/***/ "./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be& ***!
+  \*************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleaseComponent_vue_vue_type_template_id_58cb17be_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleaseComponent_vue_vue_type_template_id_58cb17be_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleaseComponent_vue_vue_type_template_id_58cb17be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ReleaseComponent.vue?vue&type=template&id=58cb17be& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleaseComponent.vue?vue&type=template&id=58cb17be&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleaseComponent_vue_vue_type_template_id_58cb17be___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleaseComponent_vue_vue_type_template_id_58cb17be_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleaseComponent_vue_vue_type_template_id_58cb17be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -50471,7 +50449,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ReleasesPageComponent_vue_vue_type_template_id_145b6ae7_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true& */ "./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true&");
+/* harmony import */ var _ReleasesPageComponent_vue_vue_type_template_id_145b6ae7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReleasesPageComponent.vue?vue&type=template&id=145b6ae7& */ "./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&");
 /* harmony import */ var _ReleasesPageComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReleasesPageComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ReleasesPageComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -50483,11 +50461,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _ReleasesPageComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ReleasesPageComponent_vue_vue_type_template_id_145b6ae7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ReleasesPageComponent_vue_vue_type_template_id_145b6ae7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ReleasesPageComponent_vue_vue_type_template_id_145b6ae7___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ReleasesPageComponent_vue_vue_type_template_id_145b6ae7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "145b6ae7",
+  null,
   null
   
 )
@@ -50513,19 +50491,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true&":
-/*!******************************************************************************************************!*\
-  !*** ./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true& ***!
-  \******************************************************************************************************/
+/***/ "./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7& ***!
+  \******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleasesPageComponent_vue_vue_type_template_id_145b6ae7_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleasesPageComponent_vue_vue_type_template_id_145b6ae7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleasesPageComponent_vue_vue_type_template_id_145b6ae7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ReleasesPageComponent.vue?vue&type=template&id=145b6ae7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReleasesPageComponent.vue?vue&type=template&id=145b6ae7&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleasesPageComponent_vue_vue_type_template_id_145b6ae7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleasesPageComponent_vue_vue_type_template_id_145b6ae7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReleasesPageComponent_vue_vue_type_template_id_145b6ae7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -1,34 +1,33 @@
 <template>
     <div class="container">
-        <!-- section panel -->
-        <div class="btn-group">
-            <button type="button" class="btn btn-link" disabled>select:</button>
-            <button
-                type="button"
-                class="btn btn-link"
-                v-for="(n,i) in 3"
-                :key="i"
-                @click="update_view(i)"
-                :class="{active: sel_view === i }"
-            >{{artist_types[i]}}</button>
-        </div>
+        <!-- seclection panel -->
+        <span>select:</span>
+        <a
+            v-for="(n,i) in 3"
+            :key="i"
+            href="#"
+            @click="update_view(i)"
+            :class="{active: sel_view === i }"
+        >{{artist_types[i]}}</a>
         <!-- artists images and bios -->
         <div class="overflow-auto" id="artist_list">
-            <div v-for="artist in filteredArtists" :key="artist.id" class="row" id="artist_row">
-                <div class="col-8">
+            <div v-for="artist in filteredArtists" :key="artist.id" id="artist_row">
+                <a :href="'/artists#'+artist.anchor">
                     <img
                         :src="'/img/artists/'+artist.profile"
                         class="img-fluid mx-auto image-responsive"
-                        id="img-testing-test"
+                        id="artist_profile"
                         :alt="artist.name"
                     >
-                </div>
-                <div class="col-4">
-                    <span>{{artist.name}}</span>
-                    <!-- roles of artist -->
-                    <!-- <span>{{artist.name}}</span> -->
-                </div>
-                <br>
+                </a>
+
+                <!-- click artist name to go to artists/artist name -->
+                <a :href="'/artists#'+artist.anchor">{{artist.name}}</a>
+                <!-- roles of artist -->
+                <!-- <span>{{artist.name}}</span> -->
+
+                <!-- short description of artist -->
+                <!-- <span>{{artist.short_desc}}</span> -->
             </div>
         </div>
     </div>
@@ -52,7 +51,6 @@ export default {
     },
     mounted() {
         console.log("Artists Home List Component mounted.");
-        console.log(this.artists);
     },
     computed: {
         filteredArtists() {
@@ -65,6 +63,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
