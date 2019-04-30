@@ -1772,6 +1772,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Artist Component mounted.");
@@ -1916,7 +1919,6 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webp
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1989,6 +1991,10 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2024,12 +2030,6 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -37395,31 +37395,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "a",
-      {
-        attrs: {
-          href: "#" + _vm.artist.anchor,
-          name: _vm.artist.anchor,
-          id: "artist_name_link"
-        }
-      },
-      [_vm._v(_vm._s(_vm.artist.name))]
-    ),
-    _vm._v(" "),
-    _c("p", { attrs: { id: "artist_short_desc" } }, [
-      _vm._v(_vm._s(_vm.artist.short_desc))
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row", attrs: { id: "artist_bio" } }, [
-      _vm._v(_vm._s(_vm.artist.bio))
-    ]),
+  return _c("div", { staticClass: "container", attrs: { id: "to_center" } }, [
+    _c("a", {
+      attrs: {
+        href: "#" + _vm.artist.anchor,
+        name: _vm.artist.anchor,
+        id: "artist_name_link"
+      }
+    }),
     _vm._v(" "),
     _c("img", {
       staticClass: "img-fluid",
       attrs: { src: "/img/artists/" + _vm.artist.profile, id: "artist_profile" }
-    })
+    }),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "centered" } }, [
+      _c("h1", [_vm._v(_vm._s(_vm.artist.name))]),
+      _vm._v(" "),
+      _c("p", { attrs: { id: "artist_short_desc" } }, [
+        _vm._v(_vm._s(_vm.artist.short_desc))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row", attrs: { id: "artist_bio" } }, [
+        _vm._v(_vm._s(_vm.artist.bio))
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -37569,7 +37569,6 @@ var render = function() {
           return _c("div", { key: artist.id, attrs: { id: "artist_row" } }, [
             _c("a", { attrs: { href: "/artists#" + artist.anchor } }, [
               _c("img", {
-                staticClass: "img-fluid mx-auto image-responsive",
                 attrs: {
                   src: "/img/artists/" + artist.profile,
                   id: "artist_profile",
@@ -37699,25 +37698,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v(_vm._s(_vm.release.name))
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v("WHY" + _vm._s(_vm.release.id))
-          ]),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "img-fluid",
-            attrs: { src: "img/releases/WHY" + _vm.release.id + ".jpg" }
-          })
-        ])
-      ])
-    ])
+  return _c("div", { staticClass: "container", attrs: { id: "to_center" } }, [
+    _c("div", [_vm._v(_vm._s(_vm.release.name))]),
+    _vm._v(" "),
+    _c("div", [_vm._v("WHY" + _vm._s(_vm.release.id))]),
+    _vm._v(" "),
+    _c("img", { attrs: { src: "img/releases/WHY" + _vm.release.id + ".jpg" } })
   ])
 }
 var staticRenderFns = []

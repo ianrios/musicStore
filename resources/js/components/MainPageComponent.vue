@@ -6,6 +6,10 @@
                 <a @click="updatePage(1)" href="#">about</a>
             </div>
         </div>
+        <!-- image with name on top
+		resize images to be squares on mibile
+		make headers, paragraph and other texts the right size
+        -->
 
         <div v-else-if="curr_view == 1" class="row">
             <h3>{{label}}</h3>

@@ -15,7 +15,6 @@
                 <a :href="'/artists#'+artist.anchor">
                     <img
                         :src="'/img/artists/'+artist.profile"
-                        class="img-fluid mx-auto image-responsive"
                         id="artist_profile"
                         :alt="artist.name"
                     >

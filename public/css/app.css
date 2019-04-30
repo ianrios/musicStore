@@ -42,3 +42,16 @@ img {
   width: 100%;
 }
 
+#to_center {
+  position: relative;
+  text-align: center;
+}
+
+#centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+

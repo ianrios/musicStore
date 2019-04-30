@@ -47,5 +47,16 @@ img {
     overflow-y: scroll;
     width: 100%;
 }
+#to_center {
+    position: relative;
+    text-align: center;
+}
+
+#centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 // #social_link {}
 // #artist_row {}

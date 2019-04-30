@@ -7,12 +7,16 @@
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="WHY? Record Company" />
 	<meta name="description" content="WHY? Record Company homepage." />
 	<meta name="keywords" content="why, record, company, music, edm, techno, idm, experimental, whythough" />
-	<meta property="og:image" content="img/meta.jpg">
+
+	<meta property="og:image" content="/img/meta.jpg">
+	<meta property="og:site_name" content="WHY? Record Compnay">
 	<meta property="og:title" content="WHY? Record Company">
+
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Title -->
