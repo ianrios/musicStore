@@ -11,7 +11,7 @@
 	<meta name="author" content="WHY? Record Company" />
 	<meta name="description" content="WHY? Record Company homepage." />
 	<meta name="keywords" content="why, record, company, music, edm, techno, idm, experimental, whythough" />
-	<meta property="og:image" content="img/11.jpg">
+	<meta property="og:image" content="img/meta.jpg">
 	<meta property="og:title" content="WHY? Record Company">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 

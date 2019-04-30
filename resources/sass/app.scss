@@ -6,6 +6,9 @@
 
 // Bootstrap
 // @import '~bootstrap/scss/bootstrap';
+// on landscape, make text bigger, maybe try picture on the side of the text
+// on vertical, try different images either equal wXh or wider than height, or smaller than full screen
+//organize
 body {
     background-color: $rich_black;
     color: $platinum;
@@ -26,16 +29,11 @@ a:visited {
     word-wrap: normal;
     display: inline-block;
 }
-a:hover {
-    color: $brass;
-}
+a:hover,
 a:active,
 a.active {
     color: $brass;
-    // color: $cadet_grey;
-    // color: $tyrian_purple;
 }
-
 img {
     width: 100%;
     height: auto;
