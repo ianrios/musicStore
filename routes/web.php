@@ -15,10 +15,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/comingsoon', function () {
-    return view('comingsoon');
+Route::get('/artists', function () {
+	return view('artists');
+});
+
+Route::get('/releases', function () {
+	return view('releases');
 });
 
 Route::get('/comingsoon', function () {
-    return view('comingsoon');
+	return view('comingsoon');
 });

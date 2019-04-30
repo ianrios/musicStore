@@ -50,12 +50,12 @@
 			<!-- navbar -->
 			<nav class="nav">
 				<a class="navbar-brand" href="/">WHY? Record Company</a>
-				<a class="nav-link" href="comingsoon">Releases</a>
+				<a class="nav-link" href="artists">Artists</a>
+				<a class="nav-link" href="releases">Releases</a>
 				<a class="nav-link" href="comingsoon">Store</a>
 				<a class="nav-link" href="comingsoon">Services</a>
 				<a class="nav-link" href="comingsoon">Contact Us</a>
 			</nav>
-
 			<div class="container h-100">
 				@yield('content')
 			</div>

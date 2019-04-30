@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
+window.Vue = require("vue");
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,12 +19,41 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('home-component', require('./components/HomeComponent.vue').default);
-Vue.component('artists-list-component', require('./components/ArtistsListComponent.vue').default);
-Vue.component('artist-view-component', require('./components/ArtistViewComponent.vue').default);
+// example component
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
 
+//homepage components
+Vue.component(
+    "main-page-artists-list-component",
+    require("./components/MainPageArtistsListComponent.vue").default
+);
+Vue.component(
+    "main-page-component",
+    require("./components/MainPageComponent.vue").default
+);
 
+//artists page components
+Vue.component(
+    "artist-component",
+    require("./components/ArtistComponent.vue").default
+);
+Vue.component(
+    "artists-page-component",
+    require("./components/ArtistsPageComponent.vue").default
+);
+
+//releases page components
+Vue.component(
+    "release-component",
+    require("./components/ReleaseComponent.vue").default
+);
+Vue.component(
+    "releases-page-component",
+    require("./components/ReleasesPageComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,5 +62,5 @@ Vue.component('artist-view-component', require('./components/ArtistViewComponent
  */
 
 const app = new Vue({
-    el: '#app',
+    el: "#app"
 });
