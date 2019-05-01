@@ -1,5 +1,4 @@
 <!-- Stored in resources/views/layouts/app.blade.php -->
-
 <!doctype html>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="no-js">
@@ -49,22 +48,17 @@
 </head>
 
 <body>
-
-	<div id="app" class="container h-100">
-		<div class="h-100 justify-content-center align-items-center">
-			<!-- navbar -->
-			<nav class="nav" id="header">
-				<a class="navbar-brand" href="/">WHY? Record Company</a>
-				<a class="nav-link" href="artists">Artists</a>
-				<a class="nav-link" href="releases">Releases</a>
-				<a class="nav-link" href="comingsoon">Store</a>
-				<a class="nav-link" href="comingsoon">Services</a>
-				<a class="nav-link" href="comingsoon">Contact Us</a>
-			</nav>
-			<div class="container">
-				@yield('content')
-			</div>
-		</div>
+	<div id="app" class="container">
+		{{-- hamburger for mobile --}} {{-- add css grid --}} {{-- convert to vue nav component --}}
+		<nav class="nav" id="header">
+			<a class="navbar-brand" href="/">WHY? Record Company</a>
+			<a class="nav-link" href="artists">Artists</a>
+			<a class="nav-link" href="releases">Releases</a>
+			<a class="nav-link" href="comingsoon">Store</a>
+			<a class="nav-link" href="comingsoon">Services</a>
+			<a class="nav-link" href="comingsoon">Contact Us</a>
+		</nav>
+		@yield('content')
 	</div>
 
 	<!-- <script src="js/imagesloaded.pkgd.min.js"></script> -->

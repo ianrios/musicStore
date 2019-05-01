@@ -9,6 +9,10 @@ body {
   font-family: "Cormorant SC", serif;
 }
 
+a {
+  transition: 0.2s ease-out, background 0.2s ease-in;
+}
+
 a:-webkit-any-link,
 a:link,
 a:visited {

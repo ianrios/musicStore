@@ -1,16 +1,13 @@
 <template>
-    <div>
-        <div v-if="curr_view == 0" class="row h-100 justify-content-center align-items-center">
-            <div class="col">
-                <h1>{{label}}</h1>
-                <a @click="updatePage(1)" href="#">about</a>
-            </div>
+    <div class="container">
+        <div v-if="curr_view == 0">
+            <h1>{{label}}</h1>
+            <a @click="updatePage(1)" href="#">about</a>
         </div>
         <!-- image with name on top
 		resize images to be squares on mibile
 		make headers, paragraph and other texts the right size
         -->
-
         <div v-else-if="curr_view == 1" class="row">
             <h3>{{label}}</h3>
             <a href="#" @click="updatePage(0)" aria-label="Back to main view">back</a>

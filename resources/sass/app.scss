@@ -19,6 +19,14 @@ body {
     padding: 0px;
     font-family: "Cormorant SC", serif;
 }
+a {
+    // transition speed on hover
+    -o-transition: $fade_speed ease-out, background $fade_speed ease-in;
+    -ms-transition: $fade_speed ease-out, background $fade_speed ease-in;
+    -moz-transition: $fade_speed ease-out, background $fade_speed ease-in;
+    -webkit-transition: $fade_speed ease-out, background $fade_speed ease-in;
+    transition: $fade_speed ease-out, background $fade_speed ease-in;
+}
 a:-webkit-any-link,
 a:link,
 a:visited {

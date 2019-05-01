@@ -1,6 +1,6 @@
 <template>
     <div class="container" id="to_center">
-        <div>{{release.name}}</div>
+        <h3>{{release.name}}</h3>
         <!-- FILTER
 						when released
 						year of release
@@ -12,7 +12,7 @@
 						tags/meta
 
         -->
-        <div>WHY{{release.id}}</div>
+        <h4>WHY{{release.id}}</h4>
         <img :src="'img/releases/WHY'+release.id+'.jpg'">
     </div>
 </template>

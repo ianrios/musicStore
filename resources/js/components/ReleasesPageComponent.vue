@@ -2,7 +2,6 @@
     <div class="container">
         <h1>Releases</h1>
         <p>tell me what i should do to add cool functionality to this page / how it can filter within all the releases</p>
-        <br>
         <release-component
             v-for="release in releases.slice().reverse()"
             track-by="$index"

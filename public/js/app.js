@@ -1992,9 +1992,6 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2072,7 +2069,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../JSON/data.json */ "./resources/js/JSON/data.json");
 var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../JSON/data.json */ "./resources/js/JSON/data.json", 1);
 /* harmony import */ var _ReleaseComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReleaseComponent.vue */ "./resources/js/components/ReleaseComponent.vue");
-//
 //
 //
 //
@@ -37610,32 +37606,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "container" }, [
     _vm.curr_view == 0
-      ? _c(
-          "div",
-          {
-            staticClass: "row h-100 justify-content-center align-items-center"
-          },
-          [
-            _c("div", { staticClass: "col" }, [
-              _c("h1", [_vm._v(_vm._s(_vm.label))]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      return _vm.updatePage(1)
-                    }
-                  }
-                },
-                [_vm._v("about")]
-              )
-            ])
-          ]
-        )
+      ? _c("div", [
+          _c("h1", [_vm._v(_vm._s(_vm.label))]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.updatePage(1)
+                }
+              }
+            },
+            [_vm._v("about")]
+          )
+        ])
       : _vm.curr_view == 1
       ? _c(
           "div",
@@ -37699,9 +37687,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container", attrs: { id: "to_center" } }, [
-    _c("div", [_vm._v(_vm._s(_vm.release.name))]),
+    _c("h3", [_vm._v(_vm._s(_vm.release.name))]),
     _vm._v(" "),
-    _c("div", [_vm._v("WHY" + _vm._s(_vm.release.id))]),
+    _c("h4", [_vm._v("WHY" + _vm._s(_vm.release.id))]),
     _vm._v(" "),
     _c("img", { attrs: { src: "img/releases/WHY" + _vm.release.id + ".jpg" } })
   ])
@@ -37739,8 +37727,6 @@ var render = function() {
           "tell me what i should do to add cool functionality to this page / how it can filter within all the releases"
         )
       ]),
-      _vm._v(" "),
-      _c("br"),
       _vm._v(" "),
       _vm._l(_vm.releases.slice().reverse(), function(release) {
         return _c("release-component", {
