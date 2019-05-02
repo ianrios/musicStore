@@ -1,22 +1,27 @@
 <template>
     <div class="container">
-        <div v-if="curr_view == 0">
-            <h1>{{label}}</h1>
-            <a @click="updatePage(1)" href="#">about</a>
+        <div id="main_page_first" v-if="curr_view == 0">
+            <h1 id="main_page_header1">{{label}}</h1>
+            <a id="main_page_about" @click="updatePage(1)" href="#">about</a>
         </div>
         <!-- image with name on top
 		resize images to be squares on mibile
 		make headers, paragraph and other texts the right size
         -->
-        <div v-else-if="curr_view == 1" class="row">
-            <h3>{{label}}</h3>
-            <a href="#" @click="updatePage(0)" aria-label="Back to main view">back</a>
-            <p>{{short_description}}</p>
+        <div id="main_page_second" v-else-if="curr_view == 1">
+            <h3 id="main_page_header3">{{label}}</h3>
+            <a
+                id="main_page_back"
+                href="#"
+                @click="updatePage(0)"
+                aria-label="Back to main view"
+            >back</a>
+            <p id="main_page_short_desc">{{short_description}}</p>
             <a
                 v-for="link in label_socials"
                 :key="link.short_name"
                 :href="link.url"
-                id="social_link"
+                id="main_page_social_link"
             >{{link.short_name}}</a>
 
             <main-page-artists-list-component/>

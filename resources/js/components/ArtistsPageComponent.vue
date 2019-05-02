@@ -1,10 +1,16 @@
 <template>
     <div class="container">
-        <h1>Artists</h1>
-        <p>tell me what i can do to add cool functionality to this page, filtering/general cool ways to display the info</p>
-        <div v-for="artist in artists" :key="artist.name" id="artist_page_name">
-            <artist-component :artist="artist"/>
-            <!-- artist filter 
+        <h1 id="artists_page_title">Artists</h1>
+        <p
+            id="artists_page_info"
+        >tell me what i can do to add cool functionality to this page, filtering/general cool ways to display the info</p>
+        <artist-component
+            v-for="artist in artists"
+            :key="artist.name"
+            id="artists_page_name"
+            :artist="artist"
+        />
+        <!-- artist filter 
 				all, individual, groups
 				role_type,
 				releases,
@@ -17,10 +23,7 @@
 			
 
 			add 'ai' as an artist
-            -->
-
-            <br>
-        </div>
+        -->
     </div>
 </template>
 

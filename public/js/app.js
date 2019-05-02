@@ -1773,8 +1773,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Artist Component mounted.");
@@ -1798,6 +1796,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ArtistComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArtistComponent.vue */ "./resources/js/components/ArtistComponent.vue");
 /* harmony import */ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../JSON/data.json */ "./resources/js/JSON/data.json");
 var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../JSON/data.json */ "./resources/js/JSON/data.json", 1);
+//
+//
+//
 //
 //
 //
@@ -1919,13 +1920,14 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webp
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       sel_view: 0,
       //0: all, 1: individuals, 2: groups
-      artist_types: ["all", "individuals", "groups"],
+      artist_types: _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__["artist_types"],
       artists: _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__["artists"]
     };
   },
@@ -1966,6 +1968,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MainPageArtistsListComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainPageArtistsListComponent.vue */ "./resources/js/components/MainPageArtistsListComponent.vue");
 /* harmony import */ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../JSON/data.json */ "./resources/js/JSON/data.json");
 var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../JSON/data.json */ "./resources/js/JSON/data.json", 1);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2069,6 +2076,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../JSON/data.json */ "./resources/js/JSON/data.json");
 var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../JSON/data.json */ "./resources/js/JSON/data.json", 1);
 /* harmony import */ var _ReleaseComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReleaseComponent.vue */ "./resources/js/components/ReleaseComponent.vue");
+//
+//
+//
 //
 //
 //
@@ -37391,32 +37401,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container", attrs: { id: "to_center" } }, [
-    _c("a", {
-      attrs: {
-        href: "#" + _vm.artist.anchor,
-        name: _vm.artist.anchor,
-        id: "artist_name_link"
-      }
-    }),
-    _vm._v(" "),
-    _c("img", {
-      staticClass: "img-fluid",
-      attrs: { src: "/img/artists/" + _vm.artist.profile, id: "artist_profile" }
-    }),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "centered" } }, [
-      _c("h1", [_vm._v(_vm._s(_vm.artist.name))]),
+  return _c(
+    "div",
+    { staticClass: "container", attrs: { id: "artist_component" } },
+    [
+      _c("a", {
+        attrs: {
+          href: "#" + _vm.artist.anchor,
+          name: _vm.artist.anchor,
+          id: "artist_name_link"
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "img-fluid",
+        attrs: {
+          src: "/img/artists/" + _vm.artist.profile,
+          id: "artist_profile"
+        }
+      }),
+      _vm._v(" "),
+      _c("h1", { attrs: { id: "artist_name" } }, [
+        _vm._v(_vm._s(_vm.artist.name))
+      ]),
       _vm._v(" "),
       _c("p", { attrs: { id: "artist_short_desc" } }, [
         _vm._v(_vm._s(_vm.artist.short_desc))
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row", attrs: { id: "artist_bio" } }, [
-        _vm._v(_vm._s(_vm.artist.bio))
-      ])
-    ])
-  ])
+      _c("p", { attrs: { id: "artist_bio" } }, [_vm._v(_vm._s(_vm.artist.bio))])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37444,25 +37459,19 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("h1", [_vm._v("Artists")]),
+      _c("h1", { attrs: { id: "artists_page_title" } }, [_vm._v("Artists")]),
       _vm._v(" "),
-      _c("p", [
+      _c("p", { attrs: { id: "artists_page_info" } }, [
         _vm._v(
           "tell me what i can do to add cool functionality to this page, filtering/general cool ways to display the info"
         )
       ]),
       _vm._v(" "),
       _vm._l(_vm.artists, function(artist) {
-        return _c(
-          "div",
-          { key: artist.name, attrs: { id: "artist_page_name" } },
-          [
-            _c("artist-component", { attrs: { artist: artist } }),
-            _vm._v(" "),
-            _c("br")
-          ],
-          1
-        )
+        return _c("artist-component", {
+          key: artist.name,
+          attrs: { id: "artists_page_name", artist: artist }
+        })
       })
     ],
     2
@@ -37539,15 +37548,15 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("span", [_vm._v("select:")]),
+      _c("span", { attrs: { id: "select_span" } }, [_vm._v("select:")]),
       _vm._v(" "),
-      _vm._l(3, function(n, i) {
+      _vm._l(_vm.artist_types.length, function(n, i) {
         return _c(
           "a",
           {
             key: i,
             class: { active: _vm.sel_view === i },
-            attrs: { href: "#" },
+            attrs: { href: "#", id: "main_page_link_select" },
             on: {
               click: function($event) {
                 return _vm.update_view(i)
@@ -37560,23 +37569,47 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "overflow-auto", attrs: { id: "artist_list" } },
+        { staticClass: "overflow-auto", attrs: { id: "artist_home_list" } },
         _vm._l(_vm.filteredArtists, function(artist) {
-          return _c("div", { key: artist.id, attrs: { id: "artist_row" } }, [
-            _c("a", { attrs: { href: "/artists#" + artist.anchor } }, [
-              _c("img", {
-                attrs: {
-                  src: "/img/artists/" + artist.profile,
-                  id: "artist_profile",
-                  alt: artist.name
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "/artists#" + artist.anchor } }, [
-              _vm._v(_vm._s(artist.name))
-            ])
-          ])
+          return _c(
+            "div",
+            { key: artist.id, attrs: { id: "artist_home_row" } },
+            [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    id: "artist_home_image_link",
+                    href: "/artists#" + artist.anchor
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "/img/artists/" + artist.profile,
+                      id: "artist_home_profile",
+                      alt: artist.name
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    id: "artist_home_name_link",
+                    href: "/artists#" + artist.anchor
+                  }
+                },
+                [_vm._v(_vm._s(artist.name))]
+              ),
+              _vm._v(" "),
+              _c("p", { attrs: { id: "artist_home_short_desc" } }, [
+                _vm._v(_vm._s(artist.short_desc))
+              ])
+            ]
+          )
         }),
         0
       )
@@ -37608,13 +37641,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _vm.curr_view == 0
-      ? _c("div", [
-          _c("h1", [_vm._v(_vm._s(_vm.label))]),
+      ? _c("div", { attrs: { id: "main_page_first" } }, [
+          _c("h1", { attrs: { id: "main_page_header1" } }, [
+            _vm._v(_vm._s(_vm.label))
+          ]),
           _vm._v(" "),
           _c(
             "a",
             {
-              attrs: { href: "#" },
+              attrs: { id: "main_page_about", href: "#" },
               on: {
                 click: function($event) {
                   return _vm.updatePage(1)
@@ -37627,14 +37662,20 @@ var render = function() {
       : _vm.curr_view == 1
       ? _c(
           "div",
-          { staticClass: "row" },
+          { attrs: { id: "main_page_second" } },
           [
-            _c("h3", [_vm._v(_vm._s(_vm.label))]),
+            _c("h3", { attrs: { id: "main_page_header3" } }, [
+              _vm._v(_vm._s(_vm.label))
+            ]),
             _vm._v(" "),
             _c(
               "a",
               {
-                attrs: { href: "#", "aria-label": "Back to main view" },
+                attrs: {
+                  id: "main_page_back",
+                  href: "#",
+                  "aria-label": "Back to main view"
+                },
                 on: {
                   click: function($event) {
                     return _vm.updatePage(0)
@@ -37644,14 +37685,16 @@ var render = function() {
               [_vm._v("back")]
             ),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.short_description))]),
+            _c("p", { attrs: { id: "main_page_short_desc" } }, [
+              _vm._v(_vm._s(_vm.short_description))
+            ]),
             _vm._v(" "),
             _vm._l(_vm.label_socials, function(link) {
               return _c(
                 "a",
                 {
                   key: link.short_name,
-                  attrs: { href: link.url, id: "social_link" }
+                  attrs: { href: link.url, id: "main_page_social_link" }
                 },
                 [_vm._v(_vm._s(link.short_name))]
               )
@@ -37686,12 +37729,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container", attrs: { id: "to_center" } }, [
-    _c("h3", [_vm._v(_vm._s(_vm.release.name))]),
+  return _c("div", { staticClass: "container" }, [
+    _c("h3", { attrs: { id: "release_header3" } }, [
+      _vm._v(_vm._s(_vm.release.name))
+    ]),
     _vm._v(" "),
-    _c("h4", [_vm._v("WHY" + _vm._s(_vm.release.id))]),
+    _c("h4", { attrs: { id: "release_header4" } }, [
+      _vm._v("WHY" + _vm._s(_vm.release.id))
+    ]),
     _vm._v(" "),
-    _c("img", { attrs: { src: "img/releases/WHY" + _vm.release.id + ".jpg" } })
+    _c("img", {
+      attrs: {
+        id: "release_image",
+        src: "img/releases/" + _vm.release.cover_art + ".jpg"
+      }
+    })
   ])
 }
 var staticRenderFns = []
@@ -37720,9 +37772,11 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("h1", [_vm._v("Releases")]),
+      _c("h1", { attrs: { id: "releases_page_header1" } }, [
+        _vm._v("Releases")
+      ]),
       _vm._v(" "),
-      _c("p", [
+      _c("p", { attrs: { id: "releases_page_p" } }, [
         _vm._v(
           "tell me what i should do to add cool functionality to this page / how it can filter within all the releases"
         )
@@ -37731,7 +37785,11 @@ var render = function() {
       _vm._l(_vm.releases.slice().reverse(), function(release) {
         return _c("release-component", {
           key: release.id,
-          attrs: { "track-by": "$index", release: release }
+          attrs: {
+            id: "releases_page_component",
+            "track-by": "$index",
+            release: release
+          }
         })
       })
     ],
@@ -49885,10 +49943,10 @@ module.exports = function(module) {
 /*!*************************************!*\
   !*** ./resources/js/JSON/data.json ***!
   \*************************************/
-/*! exports provided: curr_view, label, short_description, roles, artists, releases, label_socials, label_streaming, default */
+/*! exports provided: curr_view, artist_types, label, short_description, roles, artists, releases, label_socials, label_streaming, default */
 /***/ (function(module) {
 
-module.exports = {"curr_view":0,"label":"WHY? Record Company","short_description":"If one examines precultural libertarianism, one is faced with a choice: either accept rationalism or conclude that context is a product of the masses, given that Marx’s essay on precultural libertarianism is invalid. The subject is contextualised into a precapitalist dematerialism that includes culture as a reality.","roles":["label manager","studio manager","web designer","graphic designer","marketing specialist","dj","producer","musician","mastering engineer","mixing engineer","singer","songwriter","vj"],"artists":[{"name":"whythough?","id":0,"num_artists":1,"anchor":"whythough","profile":"whythough_4x6.jpg","images":[],"short_desc":"High in fiber and good for your heart","bio":"whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."},{"name":"dyl_pykl","id":1,"num_artists":1,"anchor":"dyl_pykl","profile":"dyl_pykl_4x6.jpg","images":[],"short_desc":"Space, the final frontier. ","bio":"Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."},{"name":"svnteen","id":2,"num_artists":2,"anchor":"svnteen","profile":"svnteen_4x6.jpg","images":[],"short_desc":"Busey ipsum dolor sit amet. ","bio":"Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."}],"releases":[{"name":"","id":"001","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":[""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"002","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"003","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"004","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"005","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"006","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"007","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"008","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"009","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"010","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"011","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"012","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"013","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"014","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"015","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"016","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"017","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"018","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"019","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"020","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"021","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Daegu Acid EP","id":"022","artists":[1],"images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}}],"label_socials":[{"name":"instagram","short_name":"in","url":"https://www.instagram.com/","icon":""},{"name":"facebook","short_name":"fb","url":"https://www.facebook.com/","icon":""},{"name":"twitter","short_name":"tw","url":"https://www.twitter.com/","icon":""},{"name":"discord","short_name":"dc","url":"https://www.discordapp.com/","icon":""}],"label_streaming":[{"name":"spotify","short_name":"sp","url":"https://open.spotify.com","icon":""},{"name":"apple music","short_name":"am","url":"","icon":""},{"name":"itunes","short_name":"it","url":"","icon":""},{"name":"beatport","short_name":"bp","url":"","icon":""},{"name":"bandcamp","short_name":"bc","url":"","icon":""},{"name":"soundcloud","short_name":"sc","url":"","icon":""},{"name":"choon","short_name":"ch","url":"","icon":""}]};
+module.exports = {"curr_view":0,"artist_types":["all","individuals","groups"],"label":"WHY? Record Company","short_description":"If one examines precultural libertarianism, one is faced with a choice: either accept rationalism or conclude that context is a product of the masses, given that Marx’s essay on precultural libertarianism is invalid. The subject is contextualised into a precapitalist dematerialism that includes culture as a reality.","roles":["label manager","studio manager","web designer","graphic designer","marketing specialist","dj","producer","musician","mastering engineer","mixing engineer","singer","songwriter","vj"],"artists":[{"name":"whythough?","id":0,"num_artists":1,"anchor":"whythough","profile":"whythough_4x6.jpg","additional_images":[],"short_desc":"High in fiber and good for your heart","bio":"whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."},{"name":"dyl_pykl","id":1,"num_artists":1,"anchor":"dyl_pykl","profile":"dyl_pykl_4x6.jpg","additional_images":[],"short_desc":"Space, the final frontier. ","bio":"Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."},{"name":"svnteen","id":2,"num_artists":2,"anchor":"svnteen","profile":"svnteen_4x6.jpg","additional_images":[],"short_desc":"Busey ipsum dolor sit amet. ","bio":"Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."}],"releases":[{"name":"","id":"001","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":[""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"002","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"003","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"004","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"005","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"006","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"007","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"008","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"009","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"010","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"HEAVEN","id":"011","primary_artist":"whythough?","additional_artists":["",""],"features":[""],"cover_art":"heaven","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-08-03T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"The Lobster EP","id":"012","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"lobster","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-05-30T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Blurs","id":"013","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"blurs","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-01-03T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Blurs (Remixes)","id":"014","primary_artist":"whythough","additional_artists":["",""],"features":[""],"cover_art":"blurs_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-02-22T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Cigarette Smoke","id":"015","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"cigarette_smoke","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-06-21T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Harður ˈTeknō","id":"016","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"harder_tekno","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-07-31T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"EXCO EP","id":"017","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"exco","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-05T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Harmonious Interaction of Patterns (Remixes)","id":"018","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"hiop_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-19T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Uhhhhhhh","id":"019","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"uhhhhhhh","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-19T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Ganymede & The Late Heavy Bombardment","id":"020","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"ganymede","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-26T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"EXCO Remixes EP","id":"021","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"exco_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2019-03-08T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Daegu Acid EP","id":"022","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"daegu_acid","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2019-04-26T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}}],"label_socials":[{"name":"instagram","short_name":"in","url":"https://www.instagram.com/","icon":""},{"name":"facebook","short_name":"fb","url":"https://www.facebook.com/","icon":""},{"name":"twitter","short_name":"tw","url":"https://www.twitter.com/","icon":""},{"name":"discord","short_name":"dc","url":"https://www.discordapp.com/","icon":""}],"label_streaming":[{"name":"spotify","short_name":"sp","url":"https://open.spotify.com","icon":""},{"name":"apple music","short_name":"am","url":"","icon":""},{"name":"itunes","short_name":"it","url":"","icon":""},{"name":"beatport","short_name":"bp","url":"","icon":""},{"name":"bandcamp","short_name":"bc","url":"","icon":""},{"name":"soundcloud","short_name":"sc","url":"","icon":""},{"name":"choon","short_name":"ch","url":"","icon":""}]};
 
 /***/ }),
 

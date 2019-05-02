@@ -1,45 +1,46 @@
 <template>
     <div class="container">
         <!-- seclection panel -->
-        <span>select:</span>
+        <span id="select_span">select:</span>
         <a
-            v-for="(n,i) in 3"
+            v-for="(n,i) in artist_types.length"
             :key="i"
             href="#"
             @click="update_view(i)"
             :class="{active: sel_view === i }"
+            id="main_page_link_select"
         >{{artist_types[i]}}</a>
         <!-- artists images and bios -->
-        <div class="overflow-auto" id="artist_list">
-            <div v-for="artist in filteredArtists" :key="artist.id" id="artist_row">
-                <a :href="'/artists#'+artist.anchor">
+        <div class="overflow-auto" id="artist_home_list">
+            <div v-for="artist in filteredArtists" :key="artist.id" id="artist_home_row">
+                <a id="artist_home_image_link" :href="'/artists#'+artist.anchor">
                     <img
                         :src="'/img/artists/'+artist.profile"
-                        id="artist_profile"
+                        id="artist_home_profile"
                         :alt="artist.name"
                     >
                 </a>
 
                 <!-- click artist name to go to artists/artist name -->
-                <a :href="'/artists#'+artist.anchor">{{artist.name}}</a>
+                <a id="artist_home_name_link" :href="'/artists#'+artist.anchor">{{artist.name}}</a>
                 <!-- roles of artist -->
                 <!-- <span>{{artist.name}}</span> -->
 
                 <!-- short description of artist -->
-                <!-- <span>{{artist.short_desc}}</span> -->
+                <p id="artist_home_short_desc">{{artist.short_desc}}</p>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { artists } from "../JSON/data.json";
+import { artists, artist_types } from "../JSON/data.json";
 
 export default {
     data: function() {
         return {
             sel_view: 0, //0: all, 1: individuals, 2: groups
-            artist_types: ["all", "individuals", "groups"],
+            artist_types: artist_types,
             artists: artists
         };
     },

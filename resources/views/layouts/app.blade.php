@@ -26,7 +26,7 @@
 	<!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="{{ URL::asset('css/extend.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ URL::asset('css/media_extend.css') }}" type="text/css">
 	<link href="/css/app.css" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="css/base.css" type="text/css"> -->
 	<!-- <link rel="stylesheet" href="https://use.typekit.net/vmz2gfd.css"> -->
@@ -48,16 +48,26 @@
 </head>
 
 <body>
-	<div id="app" class="container">
-		{{-- hamburger for mobile --}} {{-- add css grid --}} {{-- convert to vue nav component --}}
-		<nav class="nav" id="header">
-			<a class="navbar-brand" href="/">WHY? Record Company</a>
-			<a class="nav-link" href="artists">Artists</a>
-			<a class="nav-link" href="releases">Releases</a>
-			<a class="nav-link" href="comingsoon">Store</a>
-			<a class="nav-link" href="comingsoon">Services</a>
-			<a class="nav-link" href="comingsoon">Contact Us</a>
+	{{-- add css grid --}} {{-- convert to vue nav component --}}
+	<header>
+		<h1 id="brand"><a id="nav-content" class="navbar-brand" href="/">WHY? Record Company</a></h1>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<nav class="nav" id="nav-header">
+			<ul>
+				<li><a id="nav-content" class="nav-link" href="artists">Artists</a></li>
+				<li><a id="nav-content" class="nav-link" href="releases">Releases</a></li>
+				<li><a id="nav-content" class="nav-link" href="comingsoon">Store</a></li>
+				<li><a id="nav-content" class="nav-link" href="comingsoon">Services</a></li>
+				<li><a id="nav-content" class="nav-link" href="comingsoon">Contact Us</a></li>
+
+			</ul>
 		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span>?</span>
+		</label>
+	</header>
+
+	<div id="app" class="container">
 		@yield('content')
 	</div>
 

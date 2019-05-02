@@ -1,8 +1,11 @@
 <template>
     <div class="container">
-        <h1>Releases</h1>
-        <p>tell me what i should do to add cool functionality to this page / how it can filter within all the releases</p>
+        <h1 id="releases_page_header1">Releases</h1>
+        <p
+            id="releases_page_p"
+        >tell me what i should do to add cool functionality to this page / how it can filter within all the releases</p>
         <release-component
+            id="releases_page_component"
             v-for="release in releases.slice().reverse()"
             track-by="$index"
             :key="release.id"

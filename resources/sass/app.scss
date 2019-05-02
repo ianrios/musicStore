@@ -10,14 +10,19 @@
 // on vertical, try different images either equal wXh or wider than height, or smaller than full screen
 //organize
 body {
+    margin: 0;
+    padding: 0;
     background-color: $rich_black;
+    font-family: "Cormorant SC", serif;
     color: $platinum;
-    margin: 0px;
     text-decoration: none;
     -webkit-appearance: none;
     word-spacing: normal;
-    padding: 0px;
-    font-family: "Cormorant SC", serif;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 a {
     // transition speed on hover
@@ -30,18 +35,135 @@ a {
 a:-webkit-any-link,
 a:link,
 a:visited {
-    padding: 5px;
+    // padding: 5px;
     color: $cadet_grey;
     cursor: pointer;
     text-decoration: none;
     word-wrap: normal;
-    display: inline-block;
+    // display: inline-block;
 }
 a:hover,
 a:active,
 a.active {
     color: $brass;
 }
+// navigation styles
+header {
+    background: $tyrian_purple;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+.nav-toggle {
+    display: none;
+    margin-left: 1em;
+}
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    // border: 1px solid black;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: $tyrian_purple;
+    width: 100%;
+
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform $transition_speed ease-in-out;
+
+    -moz-transition: transform $transition_speed ease-in-out; /* Firefox 4 */
+    -webkit-transition: transform $transition_speed ease-in-out; /* Safari and Chrome */
+    -o-transition: transform $transition_speed ease-in-out; /* Opera */
+    -ms-transition: transform $transition_speed ease-in-out; /* Explorer 10 */
+
+    // display: none;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+    // border: 1px solid black;
+}
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity $transition_link_speed_in ease-in-out;
+    -moz-transition: opacity $transition_link_speed_in ease-in-out; /* Firefox 4 */
+    -webkit-transition: opacity $transition_link_speed_in ease-in-out; /* Safari and Chrome */
+    -o-transition: opacity $transition_link_speed_in ease-in-out; /* Opera */
+    -ms-transition: opacity $transition_link_speed_in ease-in-out; /* Explorer 10 */
+}
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity $transition_link_speed_out ease-in-out
+        $transition_link_speed_out;
+
+    -moz-transition: opacity $transition_link_speed_out ease-in-out
+        $transition_link_speed_out; /* Firefox 4 */
+    -webkit-transition: opacity $transition_link_speed_out ease-in-out
+        $transition_link_speed_out; /* Safari and Chrome */
+    -o-transition: opacity $transition_link_speed_out ease-in-out
+        $transition_link_speed_out; /* Opera */
+    -ms-transition: opacity $transition_link_speed_out ease-in-out
+        $transition_link_speed_out; /* Explorer 10 */
+}
+#brand {
+    margin: 0;
+}
+
+// #nav_header {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+//     grid-template-rows: 1fr;
+// }
+
+// #nav-content {
+//     justify-self: center;
+// }
+
+//app related styles
+#app {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+#main_page_first {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+#main_page_header1,
+#main_page_about {
+    place-self: center;
+}
+#main_page_second {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+}
+
 img {
     width: 100%;
     height: auto;
@@ -59,7 +181,6 @@ img {
     position: relative;
     text-align: center;
 }
-
 #centered {
     position: absolute;
     top: 50%;
