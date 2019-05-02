@@ -50,7 +50,11 @@
 <body>
 	{{-- add css grid --}} {{-- convert to vue nav component --}}
 	<header>
-		<h1 id="brand"><a id="nav-content" class="navbar-brand" href="/">WHY? Record Company</a></h1>
+		<h1 id="brand">
+			{{-- <a id="nav-content" class="navbar-brand" href="/"> --}}
+				WHY?
+			{{-- </a> --}}
+		</h1>
 		<input type="checkbox" id="nav-toggle" class="nav-toggle">
 		<nav class="nav" id="nav-header">
 			<ul>
