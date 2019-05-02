@@ -1,11 +1,6 @@
-// Fonts
-// @import url("https://fonts.googleapis.com/css?family=Nunito");
-
 // Variables
 @import "variables";
 
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
 // on landscape, make text bigger, maybe try picture on the side of the text
 // on vertical, try different images either equal wXh or wider than height, or smaller than full screen
 //organize
@@ -59,6 +54,23 @@ header {
     margin: 0;
     padding: 5px;
 }
+#brand {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+#brand a:link,
+#brand a:visited,
+#nav-li a:link,
+#nav-li a:visited {
+    color: $platinum;
+}
+#brand a:active,
+#brand a:hover,
+#nav-li a:active,
+#nav-li a:hover {
+    color: $brass;
+}
 .nav-toggle {
     display: none;
     margin-left: 1em;
@@ -106,6 +118,7 @@ nav a {
     -o-transition: opacity $a_speed_in ease-in-out; /* Opera */
     -ms-transition: opacity $a_speed_in ease-in-out; /* Explorer 10 */
 }
+
 .nav-toggle:checked ~ nav {
     transform: scale(1, 1);
 }
@@ -116,11 +129,6 @@ nav a {
     -webkit-transition: opacity $a_speed_out ease-in-out $a_speed_out; /* Safari and Chrome */
     -o-transition: opacity $a_speed_out ease-in-out $a_speed_out; /* Opera */
     -ms-transition: opacity $a_speed_out ease-in-out $a_speed_out; /* Explorer 10 */
-}
-#brand {
-    margin: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
 }
 //app related styles
 
@@ -137,10 +145,20 @@ nav a {
     grid-row: 2 / 3;
 
     text-align: center;
-
+    justify-items: center;
+    color: $japanese_indigo;
     background: url("/img/mainpage.jpg") no-repeat;
     background-size: 100%;
 }
+#main_background a:link,
+#main_background a:visited,
+#main_background a:active {
+    color: $japanese_indigo;
+}
+#main_background a:hover {
+    color: $brass;
+}
+
 #main_page_header1,
 #main_page_about {
     grid-column: 2 / 3;
@@ -149,7 +167,8 @@ nav a {
 
 #main_page_header3,
 #releases_page_header1,
-#artists_page_title {
+#artists_page_title,
+#cycle_page_header1 {
     margin: 0;
 }
 

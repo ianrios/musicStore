@@ -23,6 +23,10 @@ Route::get('/releases', function () {
 	return view('releases');
 });
 
+Route::get('/CYCLE', function () {
+	return view('cycle');
+});
+
 Route::get('/comingsoon', function () {
 	return view('comingsoon');
 });
