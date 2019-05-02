@@ -52,7 +52,7 @@
 	<header>
 		<h1 id="brand">
 			<a id="nav-content" class="navbar-brand" href="/">
-				WHY?
+				WRC
 			</a>
 		</h1>
 		<input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -66,7 +66,7 @@
 			</ul>
 		</nav>
 		<label for="nav-toggle" class="nav-toggle-label">
-			<span>?</span>
+			<span id="q-span">?</span>
 		</label>
 	</header>
 
