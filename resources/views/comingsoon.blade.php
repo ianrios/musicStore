@@ -2,5 +2,5 @@
 @section('title', 'Page Title') 
 @section('content')
 
-<p>coming soon</p>
+<p id="coming_soon">coming soon</p>
 @endsection

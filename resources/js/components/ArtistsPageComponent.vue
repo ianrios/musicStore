@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="artists_page">
         <h1 id="artists_page_title">Artists</h1>
         <p
             id="artists_page_info"

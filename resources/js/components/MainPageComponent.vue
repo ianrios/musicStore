@@ -1,8 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container" id="main_page">
         <div id="main_page_first" v-if="curr_view == 0">
-            <h1 id="main_page_header1">{{label}}</h1>
-            <a id="main_page_about" @click="updatePage(1)" href="#">about</a>
+            <div id="main_background">
+                <h1 id="main_page_header1">{{label}}</h1>
+                <a id="main_page_about" @click="updatePage(1)" href="#">about</a>
+            </div>
         </div>
         <!-- image with name on top
 		resize images to be squares on mibile

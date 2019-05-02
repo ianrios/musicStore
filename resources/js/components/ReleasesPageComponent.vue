@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="releases_page">
         <h1 id="releases_page_header1">Releases</h1>
         <p
             id="releases_page_p"

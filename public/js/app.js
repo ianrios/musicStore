@@ -1999,6 +1999,8 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -37457,7 +37459,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container", attrs: { id: "artists_page" } },
     [
       _c("h1", { attrs: { id: "artists_page_title" } }, [_vm._v("Artists")]),
       _vm._v(" "),
@@ -37639,25 +37641,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container", attrs: { id: "main_page" } }, [
     _vm.curr_view == 0
       ? _c("div", { attrs: { id: "main_page_first" } }, [
-          _c("h1", { attrs: { id: "main_page_header1" } }, [
-            _vm._v(_vm._s(_vm.label))
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              attrs: { id: "main_page_about", href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.updatePage(1)
+          _c("div", { attrs: { id: "main_background" } }, [
+            _c("h1", { attrs: { id: "main_page_header1" } }, [
+              _vm._v(_vm._s(_vm.label))
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                attrs: { id: "main_page_about", href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.updatePage(1)
+                  }
                 }
-              }
-            },
-            [_vm._v("about")]
-          )
+              },
+              [_vm._v("about")]
+            )
+          ])
         ])
       : _vm.curr_view == 1
       ? _c(
@@ -37770,7 +37774,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container", attrs: { id: "releases_page" } },
     [
       _c("h1", { attrs: { id: "releases_page_header1" } }, [
         _vm._v("Releases")
