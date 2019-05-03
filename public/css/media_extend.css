@@ -248,12 +248,20 @@ iPad 3
     #main_page_links {
         grid-area: info_p;
         padding-top: 50px;
+        margin: 0px;
+        display: inline;
+        text-align: left;
+
         /* display: none; */
 
         /* display: grid; */
         /* //grid-template-columns: unset; */
         /* grid-template-columns: 20px 20px 20px; */
     }
+    #main_page_links a {
+        margin-left: 10px;
+    }
+
     #main_background a,
     #main_background h1 {
         color: #7a6c5d;
