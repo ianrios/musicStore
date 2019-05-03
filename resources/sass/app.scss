@@ -199,13 +199,13 @@ nav {
 
     text-align: center;
     justify-items: center;
-    color: $deep_taupe;
+    color: white;
     background: url("/img/mainpage.jpg") no-repeat;
     background-size: 100%;
     a:link,
     a:visited,
     a:active {
-        color: $deep_taupe;
+        color: $platinum;
     }
     a:hover {
         color: $brass;
@@ -218,7 +218,18 @@ nav {
     justify-items: center;
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
+}
+#main_page_first a {
+    font-size: 25px;
+    color: $platinum;
+}
+#main_page_about {
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding: 0;
 }
 
 // main page second view styles
@@ -262,7 +273,9 @@ nav {
 #big_block_text_main {
     display: none;
 }
-
+#main_page_long_desc {
+    display: none;
+}
 #artist_list_main {
     grid-area: app;
     place-self: center stretch;
@@ -284,7 +297,21 @@ img {
     width: 100%;
     height: auto;
 }
+#i-chevron-left {
+    width: 0.7em;
+    height: 0.7em;
+}
+#bg_img_cycle,
+#cycle_page_p {
+    width: 70%;
 
+    display: block;
+    margin: auto;
+}
+#cycle_page_header1 {
+    color: $awesome;
+    text-align: center;
+}
 // #artist_row {
 //     height: 100%;
 //     width: 100%;

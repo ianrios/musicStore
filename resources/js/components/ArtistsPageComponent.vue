@@ -1,7 +1,7 @@
 <template>
     <div class="container" id="artists_page">
         <h1 id="artists_page_title">Artists</h1>
-        <p id="artists_page_info">Each artist has many roles-> coming soon</p>
+        <p id="artists_page_info">soon: artist filters</p>
         <div id="artists_views">
             <artist-component
                 v-for="artist in artists"

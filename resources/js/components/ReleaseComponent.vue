@@ -1,6 +1,16 @@
 <template>
     <div class="container">
-        <h3 id="release_header3">{{release.name}}</h3>
+        <a v-if="release.landing != '#'" :href="release.landing">
+            <h3 id="release_header3">{{release.name}}</h3>
+            <h4 id="release_header4">WHY{{release.id}}</h4>
+            <img id="release_image" :src="'img/releases/'+release.cover_art+'.jpg'">
+        </a>
+        <a v-else>
+            <h3 id="release_header3">{{release.name}}</h3>
+            <h4 id="release_header4">WHY{{release.id}}</h4>
+            <img id="release_image" :src="'img/releases/'+release.cover_art+'.jpg'">
+        </a>
+
         <!-- FILTER
 						when released
 						year of release
@@ -12,8 +22,6 @@
 						tags/meta
 
         -->
-        <h4 id="release_header4">WHY{{release.id}}</h4>
-        <img id="release_image" :src="'img/releases/'+release.cover_art+'.jpg'">
     </div>
 </template>
 

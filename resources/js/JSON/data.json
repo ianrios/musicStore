@@ -321,6 +321,38 @@
             "short_desc": "",
             "info_p": "",
             "release_date": "2019-04-26T18:25:43.511Z",
+            "already_released": false,
+            "release_info": {
+                "recorded": "",
+                "vocals": "",
+                "produced": "",
+                "studio": "",
+                "mixed": "",
+                "mastered": ""
+            },
+            "release_links": {
+                "spotify": "",
+                "itunes": "",
+                "apple_music": "",
+                "beatport": "",
+                "soundcloud": "",
+                "bandcamp": "",
+                "tidal": "",
+                "choon": ""
+            }
+        },
+        {
+            "name": "cycle001: grief",
+            "id": "022",
+            "landing": "CYCLE",
+            "primary_artist": "whythough?",
+            "additional_artists": ["", ""],
+            "features": [""],
+            "cover_art": "cycle001",
+            "additional_images": ["", "", ""],
+            "short_desc": "cyclic album series",
+            "info_p": "By fusing the power of online streaming with the immersiveness of live DJ mix albums, WHY? Record Company presents the CYCLE series: a loopable mix album that allows the listener to play on repeat, starting at any point in time, ending whenever.",
+            "release_date": "2019-05-17T00:00:00.511Z",
             "already_released": true,
             "release_info": {
                 "recorded": "",

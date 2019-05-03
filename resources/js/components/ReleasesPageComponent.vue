@@ -1,9 +1,7 @@
 <template>
     <div class="container" id="releases_page">
         <h1 id="releases_page_header1">Releases</h1>
-        <p
-            id="releases_page_p"
-        >each release will have a landing page, and can be filtered by artists that appear on each release</p>
+        <p id="releases_page_p">soon: release filters</p>
         <div id="releases_views">
             <release-component
                 id="releases_page_component"

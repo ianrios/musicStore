@@ -176,9 +176,7 @@ iPad 3
         margin: 50px;
         overflow: hidden;
     }
-    #main_page {
-        padding-top: 50px;
-    }
+
     #main_text {
         grid-area: main_p;
         padding-top: 50px;
@@ -195,9 +193,9 @@ iPad 3
         width: -moz-calc(100vw - 100px);
         width: -webkit-calc(100vw - 100px);
 
-        height: calc(100vh - 200px);
-        height: -moz-calc(100vh - 200px);
-        height: -webkit-calc(100vh - 200px);
+        height: calc(100vh - 100px);
+        height: -moz-calc(100vh - 100px);
+        height: -webkit-calc(100vh - 100px);
 
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -249,7 +247,7 @@ iPad 3
     #header_main_page a {
         padding-top: 20px;
         font-size: 30px;
-        color: #b68f40;
+        /* color: #b68f40; */
     }
     #main_page_links {
         grid-area: info_p;
@@ -273,7 +271,7 @@ iPad 3
     }
     #main_background a,
     #main_background h1 {
-        color: #7a6c5d;
+        /* color: #7a6c5d; */
         font-size: 35px;
     }
     #main_background h1 {
@@ -294,6 +292,13 @@ iPad 3
         grid-row-gap: 10px;
         grid-column-gap: 100px;
         margin: 100px;
+    }
+    #main_page_long_desc {
+        display: block;
+    }
+    #i-chevron-left {
+        width: 35px;
+        height: 35px;
     }
     /* #releases_page_component {
     } */

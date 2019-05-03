@@ -63,7 +63,7 @@
 				<li id="nav-li"><a id="nav-content" class="nav-link" href="releases">Releases</a></li>
 				<li id="nav-li"><a id="nav-content" class="nav-link" href="comingsoon">Store</a></li>
 				<li id="nav-li"><a id="nav-content" class="nav-link" href="comingsoon">Services</a></li>
-				<li id="nav-li"><a id="nav-content" class="nav-link" href="comingsoon">Contact Us</a></li>
+				<li id="nav-li"><a id="nav-content" class="nav-link" href="contact">Contact Us</a></li>
 			</ul>
 		</nav>
 		<label for="nav-toggle" class="nav-toggle-label">

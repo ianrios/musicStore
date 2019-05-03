@@ -1,12 +1,13 @@
 <template>
     <div class="container" id="cycle_page">
         <h1 id="cycle_page_header1">CYCLE</h1>
-        <p id="cycle_page_p">cycle</p>
+        <img id="bg_img_cycle" src="img/final_album_view_cycle001.png">
+        <p id="cycle_page_p">{{releases[9].info_p}}</p>
     </div>
 </template>
 
 <script>
-import { curr_view } from "../JSON/data.json";
+import { curr_view, releases, artists } from "../JSON/data.json";
 
 export default {
     mounted() {
@@ -14,7 +15,9 @@ export default {
     },
     data() {
         return {
-            curr_view: curr_view
+            curr_view: curr_view,
+            releases: releases,
+            artists: artists
         };
     }
 };

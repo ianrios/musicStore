@@ -213,7 +213,7 @@ nav a {
   grid-row: 2/3;
   text-align: center;
   justify-items: center;
-  color: #7a6c5d;
+  color: white;
   background: url("/img/mainpage.jpg") no-repeat;
   background-size: 100%;
 }
@@ -221,7 +221,7 @@ nav a {
 #main_background a:link,
 #main_background a:visited,
 #main_background a:active {
-  color: #7a6c5d;
+  color: #dee5e5;
 }
 
 #main_background a:hover {
@@ -235,7 +235,20 @@ nav a {
   justify-items: center;
   text-align: center;
   margin-top: 100px;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
+}
+
+#main_page_first a {
+  font-size: 25px;
+  color: #dee5e5;
+}
+
+#main_page_about {
+  grid-column: 2/3;
+  grid-row: 3/3;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding: 0;
 }
 
 #main_page_second {
@@ -265,6 +278,10 @@ nav a {
   display: none;
 }
 
+#main_page_long_desc {
+  display: none;
+}
+
 #artist_list_main {
   grid-area: app;
   place-self: center stretch;
@@ -287,5 +304,22 @@ nav a {
 img {
   width: 100%;
   height: auto;
+}
+
+#i-chevron-left {
+  width: 0.7em;
+  height: 0.7em;
+}
+
+#bg_img_cycle,
+#cycle_page_p {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+#cycle_page_header1 {
+  color: #ff206e;
+  text-align: center;
 }
 
