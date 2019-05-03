@@ -16,11 +16,11 @@ body {
   box-sizing: border-box;
 }
 
+a:-webkit-any-link,
 a {
   transition: 0.2s ease-out, background 0.2s ease-in;
 }
 
-a:-webkit-any-link,
 a:link,
 a:visited {
   color: #93a3b1;
@@ -37,13 +37,14 @@ a.active {
 }
 
 header {
-  background: #420039;
+  background-color: #020202;
   text-align: center;
   position: fixed;
   z-index: 999;
   width: 100%;
   margin: 0;
   padding: 5px;
+  height: 40px;
 }
 
 #brand {
@@ -86,7 +87,7 @@ header {
 #q-span {
   padding-bottom: 5px;
   padding-top: 5px;
-  padding-right: 115px;
+  paddingpadding-right: 115px;
   font-size: 30px;
 }
 
@@ -95,7 +96,7 @@ nav {
   text-align: left;
   top: 100%;
   left: 0;
-  background: #420039;
+  background-color: #020202;
   width: 100%;
   -webkit-transform: scale(1, 0);
           transform: scale(1, 0);
@@ -162,11 +163,26 @@ nav a {
   /* Explorer 10 */
 }
 
+#main_page_header3,
+#releases_page_header1,
+#artists_page_title,
+#cycle_page_header1,
+#coming_soon {
+  margin: 0;
+}
+
+#app {
+  position: absolute;
+  margin: 50px;
+  overflow: hidden;
+}
+
 #main_page_first {
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 100px);
+  width: -webkit-calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  height: -webkit-calc(100vh - 100px);
   display: grid;
-  grid-gap: 20px;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 3fr 1fr;
 }
@@ -197,14 +213,37 @@ nav a {
   grid-row: 2/3;
   justify-items: center;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 100px;
+  margin-bottom: 60px;
 }
 
-#main_page_header3,
-#releases_page_header1,
-#artists_page_title,
-#cycle_page_header1 {
-  margin: 0;
+#main_page_second {
+  width: calc(100vw - 100px);
+  width: -webkit-calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  height: -webkit-calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas: "head head head back filt filt" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "info_p info_p app app app app";
+}
+
+#main_page_header3 {
+  grid-area: head;
+  place-self: center stretch;
+  align-content: space-evenly;
+}
+
+#main_page_back {
+  grid-area: back;
+}
+
+#main_page_short_desc {
+  grid-area: main_p;
+}
+
+#main_page_social_link {
+  grid-area: info_p;
 }
 
 img {
@@ -219,9 +258,5 @@ img {
 #artist_list {
   overflow-y: scroll;
   width: 100%;
-}
-
-#coming_soon {
-  margin: 0;
 }
 

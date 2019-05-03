@@ -26,7 +26,7 @@
                 id="main_page_social_link"
             >{{link.short_name}}</a>
 
-            <main-page-artists-list-component/>
+            <!-- <main-page-artists-list-component/> -->
         </div>
     </div>
 </template>

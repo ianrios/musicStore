@@ -4,6 +4,8 @@
 // on landscape, make text bigger, maybe try picture on the side of the text
 // on vertical, try different images either equal wXh or wider than height, or smaller than full screen
 //organize
+
+// overall styles
 body {
     margin: 0;
     padding: 0;
@@ -20,6 +22,7 @@ body {
 *::after {
     box-sizing: border-box;
 }
+a:-webkit-any-link,
 a {
     // transition speed on hover
     -o-transition: $fade_speed ease-out, background $fade_speed ease-in;
@@ -28,31 +31,30 @@ a {
     -webkit-transition: $fade_speed ease-out, background $fade_speed ease-in;
     transition: $fade_speed ease-out, background $fade_speed ease-in;
 }
-a:-webkit-any-link,
 a:link,
 a:visited {
-    // padding: 5px;
     color: $cadet_grey;
     cursor: pointer;
     text-decoration: none;
     -moz-text-decoration: none;
     word-wrap: normal;
-    // display: inline-block;
 }
 a:hover,
 a:active,
 a.active {
     color: $brass;
 }
+
 // navigation styles
 header {
-    background: $tyrian_purple;
+    background-color: $rich_black;
     text-align: center;
     position: fixed;
     z-index: 999;
     width: 100%;
     margin: 0;
-    padding: 5px;
+    padding: $def_padding;
+    height: $h_height;
 }
 #brand {
     margin: 0;
@@ -85,11 +87,9 @@ header {
     align-items: center;
 }
 #q-span {
-    // border: 1px solid white;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-right: 115px;
-    // padding-left: 15px;
+    padding-bottom: $def_padding;
+    padding-top: $def_padding;
+    paddingpadding-right: 115px;
     font-size: 30px;
 }
 nav {
@@ -97,7 +97,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: $tyrian_purple;
+    background-color: $rich_black;
     width: 100%;
     transform: scale(1, 0);
     transform-origin: top;
@@ -106,25 +106,25 @@ nav {
     -webkit-transition: transform $transition_speed ease-in-out; /* Safari and Chrome */
     -o-transition: transform $transition_speed ease-in-out; /* Opera */
     -ms-transition: transform $transition_speed ease-in-out; /* Explorer 10 */
-}
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
-}
-nav a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    opacity: 0;
-    transition: opacity $a_speed_in ease-in-out;
-    -moz-transition: opacity $a_speed_in ease-in-out; /* Firefox 4 */
-    -webkit-transition: opacity $a_speed_in ease-in-out; /* Safari and Chrome */
-    -o-transition: opacity $a_speed_in ease-in-out; /* Opera */
-    -ms-transition: opacity $a_speed_in ease-in-out; /* Explorer 10 */
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }
+    a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        opacity: 0;
+        transition: opacity $a_speed_in ease-in-out;
+        -moz-transition: opacity $a_speed_in ease-in-out; /* Firefox 4 */
+        -webkit-transition: opacity $a_speed_in ease-in-out; /* Safari and Chrome */
+        -o-transition: opacity $a_speed_in ease-in-out; /* Opera */
+        -ms-transition: opacity $a_speed_in ease-in-out; /* Explorer 10 */
+    }
 }
 
 .nav-toggle:checked ~ label span {
@@ -142,13 +142,35 @@ nav a {
     -o-transition: opacity $a_speed_out ease-in-out $a_speed_out; /* Opera */
     -ms-transition: opacity $a_speed_out ease-in-out $a_speed_out; /* Explorer 10 */
 }
-//app related styles
 
+// styles to avoid breaking navbar
+#main_page_header3,
+#releases_page_header1,
+#artists_page_title,
+#cycle_page_header1,
+#coming_soon {
+    margin: 0;
+}
+
+//app related styles
+#app {
+    position: absolute;
+    margin: 50px;
+    overflow: hidden;
+}
+
+// main page first view styles
 #main_page_first {
-    width: 100vw;
-    height: 100vh;
+    width: calc(100vw - 100px);
+    width: -moz-calc(100vw - 100px);
+    width: -webkit-calc(100vw - 100px);
+
+    height: calc(100vh - 100px);
+    height: -moz-calc(100vh - 100px);
+    height: -webkit-calc(100vh - 100px);
+
     display: grid;
-    grid-gap: $grid-gap;
+    // grid-gap: $grid-gap;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
 }
@@ -161,32 +183,66 @@ nav a {
     color: $deep_taupe;
     background: url("/img/mainpage.jpg") no-repeat;
     background-size: 100%;
+    a:link,
+    a:visited,
+    a:active {
+        color: $deep_taupe;
+    }
+    a:hover {
+        color: $brass;
+    }
 }
-#main_background a:link,
-#main_background a:visited,
-#main_background a:active {
-    color: $deep_taupe;
-}
-#main_background a:hover {
-    color: $brass;
-}
-
 #main_page_header1,
 #main_page_about {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     justify-items: center;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 60px;
 }
+// main page second view styles
+#main_page_second {
+    width: calc(100vw - 100px);
+    width: -moz-calc(100vw - 100px);
+    width: -webkit-calc(100vw - 100px);
 
-#main_page_header3,
-#releases_page_header1,
-#artists_page_title,
-#cycle_page_header1 {
-    margin: 0;
+    height: calc(100vh - 100px);
+    height: -moz-calc(100vh - 100px);
+    height: -webkit-calc(100vh - 100px);
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    // margin: 50px;
+    // padding: 50px;
+
+    grid-template-areas:
+        "head head head back filt filt"
+        "main_p main_p app app app app"
+        "main_p main_p app app app app"
+        "main_p main_p app app app app"
+        "main_p main_p app app app app"
+        "main_p main_p app app app app"
+        "main_p main_p app app app app"
+        "info_p info_p app app app app";
 }
-
+#main_page_header3 {
+    grid-area: head;
+    // text-align: center;
+    // align-items: center;
+    place-self: center stretch;
+    align-content: space-evenly;
+}
+#main_page_back {
+    grid-area: back;
+}
+#main_page_short_desc {
+    grid-area: main_p;
+}
+#main_page_social_link {
+    grid-area: info_p;
+}
 img {
     width: 100%;
     // height: auto;
@@ -196,11 +252,6 @@ img {
     width: 100%;
 }
 #artist_list {
-    // height: calc(100vh - 345px);
     overflow-y: scroll;
     width: 100%;
-}
-
-#coming_soon {
-    margin: 0;
 }

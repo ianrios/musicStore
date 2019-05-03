@@ -164,5 +164,6 @@ iPad 3
     }
     nav li a {
         opacity: 1;
+        -moz-appearance: none;
     }
 }

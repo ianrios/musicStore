@@ -69,7 +69,6 @@
 			<span id="q-span">?</span>
 		</label>
 	</header>
-
 	<div id="app" class="container">
 		@yield('content')
 	</div>
