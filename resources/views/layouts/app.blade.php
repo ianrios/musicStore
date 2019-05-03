@@ -22,12 +22,13 @@
 	<title>WHY? Record Company</title>
 
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+SC|Cormorant+Unicase" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="{{ URL::asset('css/media_extend.css') }}" type="text/css">
 	<link href="/css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{ URL::asset('css/media_extend.css') }}" type="text/css"> {{--
+	<link href="/css/media_exte.css" rel="stylesheet"> --}}
 	<!-- <link rel="stylesheet" href="css/base.css" type="text/css"> -->
 	<!-- <link rel="stylesheet" href="https://use.typekit.net/vmz2gfd.css"> -->
 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->

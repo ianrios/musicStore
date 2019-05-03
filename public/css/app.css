@@ -87,7 +87,8 @@ header {
 #q-span {
   padding-bottom: 5px;
   padding-top: 5px;
-  paddingpadding-right: 115px;
+  margin-top: 10px;
+  padding-right: 115px;
   font-size: 30px;
 }
 
@@ -171,6 +172,26 @@ nav a {
   margin: 0;
 }
 
+#main_page_header3 {
+  text-align: left;
+}
+
+#selection_links_main {
+  grid-area: filt;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  text-align: right;
+}
+
+#main_page_link_select {
+  font-size: 1em;
+}
+
+#artist_home_name_link {
+  font-size: 25px;
+  text-align: center;
+}
+
 #app {
   position: absolute;
   margin: 50px;
@@ -225,38 +246,46 @@ nav a {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  grid-template-areas: "head head head back filt filt" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "info_p info_p app app app app";
+  min-height: 0;
+  min-width: 0;
+  grid-template-areas: "head head head head filt filt" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "main_p main_p app app app app" "info_p info_p app app app app";
 }
 
-#main_page_header3 {
+#header_main_page {
   grid-area: head;
   place-self: center stretch;
-  align-content: space-evenly;
+  display: inline;
 }
 
-#main_page_back {
-  grid-area: back;
-}
-
-#main_page_short_desc {
+#main_text {
   grid-area: main_p;
 }
 
-#main_page_social_link {
+#big_block_text_main {
+  display: none;
+}
+
+#artist_list_main {
+  grid-area: app;
+  place-self: center stretch;
+  align-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  margin: 25px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-width: 0;
+  /* NEW; needed for Firefox */
+}
+
+#main_page_links {
   grid-area: info_p;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18px, 1fr));
 }
 
 img {
   width: 100%;
-}
-
-#artist_row {
-  height: 100%;
-  width: 100%;
-}
-
-#artist_list {
-  overflow-y: scroll;
-  width: 100%;
+  height: auto;
 }
 

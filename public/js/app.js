@@ -1941,32 +1941,15 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webp
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      sel_view: 0,
-      //0: all, 1: individuals, 2: groups
-      artist_types: _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__["artist_types"],
       artists: _JSON_data_json__WEBPACK_IMPORTED_MODULE_0__["artists"]
     };
   },
-  methods: {
-    update_view: function update_view(n) {
-      this.sel_view = n;
-    }
+  props: {
+    sel_view: Number
   },
   mounted: function mounted() {
     console.log("Artists Home List Component mounted.");
@@ -2033,14 +2016,37 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      sel_view: 0,
+      //0: all, 1: individuals, 2: groups
+      artist_types: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["artist_types"],
       curr_view: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["curr_view"],
       label: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["label"],
       short_description: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["short_description"],
+      long_descriptions: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["long_descriptions"],
       label_socials: _JSON_data_json__WEBPACK_IMPORTED_MODULE_1__["label_socials"]
     };
   },
@@ -2053,6 +2059,9 @@ var _JSON_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webp
   methods: {
     updatePage: function updatePage(n) {
       this.curr_view = n;
+    },
+    update_view: function update_view(n) {
+      this.sel_view = n;
     }
   }
 });
@@ -37619,75 +37628,45 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
-    [
-      _c("span", { attrs: { id: "select_span" } }, [_vm._v("select:")]),
-      _vm._v(" "),
-      _vm._l(_vm.artist_types.length, function(n, i) {
-        return _c(
+    { staticClass: "container", attrs: { id: "artist_list_main" } },
+    _vm._l(_vm.filteredArtists, function(artist) {
+      return _c("div", { key: artist.id, attrs: { id: "artist_home_row" } }, [
+        _c(
           "a",
           {
-            key: i,
-            class: { active: _vm.sel_view === i },
-            attrs: { href: "#", id: "main_page_link_select" },
-            on: {
-              click: function($event) {
-                return _vm.update_view(i)
-              }
+            attrs: {
+              id: "artist_home_name_link",
+              href: "/artists#" + artist.anchor
             }
           },
-          [_vm._v(_vm._s(_vm.artist_types[i]))]
-        )
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "overflow-auto", attrs: { id: "artist_home_list" } },
-        _vm._l(_vm.filteredArtists, function(artist) {
-          return _c(
-            "div",
-            { key: artist.id, attrs: { id: "artist_home_row" } },
-            [
-              _c(
-                "a",
-                {
-                  attrs: {
-                    id: "artist_home_image_link",
-                    href: "/artists#" + artist.anchor
-                  }
-                },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "/img/artists/" + artist.profile,
-                      id: "artist_home_profile",
-                      alt: artist.name
-                    }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    id: "artist_home_name_link",
-                    href: "/artists#" + artist.anchor
-                  }
-                },
-                [_vm._v(_vm._s(artist.name))]
-              ),
-              _vm._v(" "),
-              _c("p", { attrs: { id: "artist_home_short_desc" } }, [
-                _vm._v(_vm._s(artist.short_desc))
-              ])
-            ]
-          )
-        }),
-        0
-      )
-    ],
-    2
+          [_vm._v(_vm._s(artist.name))]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            attrs: {
+              id: "artist_home_image_link",
+              href: "/artists#" + artist.anchor
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: "/img/artists/" + artist.profile,
+                id: "artist_home_profile",
+                alt: artist.name
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c("p", { attrs: { id: "artist_home_short_desc" } }, [
+          _vm._v(_vm._s(artist.short_desc))
+        ])
+      ])
+    }),
+    0
   )
 }
 var staticRenderFns = []
@@ -37739,43 +37718,89 @@ var render = function() {
           "div",
           { attrs: { id: "main_page_second" } },
           [
-            _c("h3", { attrs: { id: "main_page_header3" } }, [
-              _vm._v(_vm._s(_vm.label))
+            _c("div", { attrs: { id: "header_main_page" } }, [
+              _c("h3", { attrs: { id: "main_page_header3" } }, [
+                _vm._v(_vm._s(_vm.label))
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    id: "main_page_back",
+                    href: "#",
+                    "aria-label": "Back to main view"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.updatePage(0)
+                    }
+                  }
+                },
+                [_vm._v("<")]
+              )
             ]),
             _vm._v(" "),
             _c(
-              "a",
-              {
-                attrs: {
-                  id: "main_page_back",
-                  href: "#",
-                  "aria-label": "Back to main view"
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.updatePage(0)
-                  }
-                }
-              },
-              [_vm._v("back")]
+              "div",
+              { attrs: { id: "main_text" } },
+              [
+                _c("p", { attrs: { id: "main_page_short_desc" } }, [
+                  _vm._v(_vm._s(_vm.short_description))
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.long_descriptions, function(d) {
+                  return _c("p", { attrs: { id: "main_page_long_desc" } }, [
+                    _vm._v(_vm._s(d))
+                  ])
+                })
+              ],
+              2
             ),
             _vm._v(" "),
-            _c("p", { attrs: { id: "main_page_short_desc" } }, [
-              _vm._v(_vm._s(_vm.short_description))
-            ]),
+            _c(
+              "div",
+              { attrs: { id: "main_page_links" } },
+              _vm._l(_vm.label_socials, function(link) {
+                return _c(
+                  "a",
+                  {
+                    key: link.short_name,
+                    attrs: { href: link.url, id: "main_page_social_link" }
+                  },
+                  [_vm._v(_vm._s(link.short_name))]
+                )
+              }),
+              0
+            ),
             _vm._v(" "),
-            _vm._l(_vm.label_socials, function(link) {
-              return _c(
-                "a",
-                {
-                  key: link.short_name,
-                  attrs: { href: link.url, id: "main_page_social_link" }
-                },
-                [_vm._v(_vm._s(link.short_name))]
-              )
+            _c(
+              "div",
+              { attrs: { id: "selection_links_main" } },
+              _vm._l(_vm.artist_types.length, function(n, i) {
+                return _c(
+                  "a",
+                  {
+                    key: i,
+                    class: { active: _vm.sel_view === i },
+                    attrs: { href: "#", id: "main_page_link_select" },
+                    on: {
+                      click: function($event) {
+                        return _vm.update_view(i)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.artist_types[i]))]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("main-page-artists-list-component", {
+              attrs: { sel_view: _vm.sel_view }
             })
           ],
-          2
+          1
         )
       : _vm._e()
   ])
@@ -50016,10 +50041,10 @@ module.exports = function(module) {
 /*!*************************************!*\
   !*** ./resources/js/JSON/data.json ***!
   \*************************************/
-/*! exports provided: curr_view, artist_types, label, short_description, roles, artists, releases, label_socials, label_streaming, default */
+/*! exports provided: curr_view, artist_types, label, short_description, long_descriptions, roles, artists, releases, label_socials, label_streaming, default */
 /***/ (function(module) {
 
-module.exports = {"curr_view":0,"artist_types":["all","individuals","groups"],"label":"WHY? Record Company","short_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.","roles":["label manager","studio manager","web designer","graphic designer","marketing specialist","dj","producer","musician","mastering engineer","mixing engineer","singer","songwriter","vj"],"artists":[{"name":"whythough?","id":0,"num_artists":1,"anchor":"whythough","profile":"whythough_4x6.jpg","additional_images":[],"short_desc":"High in fiber and good for your heart","bio":"whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."},{"name":"dyl_pykl","id":1,"num_artists":1,"anchor":"dyl_pykl","profile":"dyl_pykl_4x6.jpg","additional_images":[],"short_desc":"Space, the final frontier. ","bio":"Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."},{"name":"svnteen","id":2,"num_artists":2,"anchor":"svnteen","profile":"svnteen_4x6.jpg","additional_images":[],"short_desc":"Busey ipsum dolor sit amet. ","bio":"Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."}],"releases":[{"name":"","id":"001","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":[""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"002","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"003","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"004","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"005","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"006","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"007","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"008","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"009","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"010","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"HEAVEN","id":"011","primary_artist":"whythough?","additional_artists":["",""],"features":[""],"cover_art":"heaven","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-08-03T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"The Lobster EP","id":"012","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"lobster","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-05-30T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Blurs","id":"013","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"blurs","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-01-03T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Blurs (Remixes)","id":"014","primary_artist":"whythough","additional_artists":["",""],"features":[""],"cover_art":"blurs_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-02-22T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Cigarette Smoke","id":"015","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"cigarette_smoke","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-06-21T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Harður ˈTeknō","id":"016","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"harder_tekno","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-07-31T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"EXCO EP","id":"017","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"exco","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-05T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Harmonious Interaction of Patterns (Remixes)","id":"018","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"hiop_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-19T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Uhhhhhhh","id":"019","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"uhhhhhhh","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-19T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Ganymede & The Late Heavy Bombardment","id":"020","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"ganymede","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-26T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"EXCO Remixes EP","id":"021","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"exco_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2019-03-08T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Daegu Acid EP","id":"022","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"daegu_acid","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2019-04-26T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}}],"label_socials":[{"name":"instagram","short_name":"in","url":"https://www.instagram.com/","icon":""},{"name":"facebook","short_name":"fb","url":"https://www.facebook.com/","icon":""},{"name":"twitter","short_name":"tw","url":"https://www.twitter.com/","icon":""},{"name":"discord","short_name":"dc","url":"https://www.discordapp.com/","icon":""}],"label_streaming":[{"name":"spotify","short_name":"sp","url":"https://open.spotify.com","icon":""},{"name":"apple music","short_name":"am","url":"","icon":""},{"name":"itunes","short_name":"it","url":"","icon":""},{"name":"beatport","short_name":"bp","url":"","icon":""},{"name":"bandcamp","short_name":"bc","url":"","icon":""},{"name":"soundcloud","short_name":"sc","url":"","icon":""},{"name":"choon","short_name":"ch","url":"","icon":""}]};
+module.exports = {"curr_view":0,"artist_types":["all","individuals","groups"],"label":"WHY? Record Company","short_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.","long_descriptions":["Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets, but fire up your browser. Strategic high-level 30,000 ft view. Drill down re-inventing the wheel at the end of the day but curate imagineer, or to be inspired is to become creative."],"roles":["label manager","studio manager","web designer","graphic designer","marketing specialist","dj","producer","musician","mastering engineer","mixing engineer","singer","songwriter","vj"],"artists":[{"name":"whythough?","id":0,"num_artists":1,"anchor":"whythough","profile":"whythough_4x6.jpg","additional_images":[],"short_desc":"High in fiber and good for your heart","bio":"whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."},{"name":"dyl_pykl","id":1,"num_artists":1,"anchor":"dyl_pykl","profile":"dyl_pykl_4x6.jpg","additional_images":[],"short_desc":"Space, the final frontier. ","bio":"Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."},{"name":"svnteen","id":2,"num_artists":2,"anchor":"svnteen","profile":"svnteen_4x6.jpg","additional_images":[],"short_desc":"Busey ipsum dolor sit amet. ","bio":"Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."}],"releases":[{"name":"","id":"001","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":[""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"002","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"003","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"004","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"005","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"006","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"007","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"008","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"009","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"","id":"010","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2012-04-23T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"HEAVEN","id":"011","primary_artist":"whythough?","additional_artists":["",""],"features":[""],"cover_art":"heaven","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-08-03T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"The Lobster EP","id":"012","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"lobster","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-05-30T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Blurs","id":"013","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"blurs","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-01-03T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Blurs (Remixes)","id":"014","primary_artist":"whythough","additional_artists":["",""],"features":[""],"cover_art":"blurs_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-02-22T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Cigarette Smoke","id":"015","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"cigarette_smoke","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-06-21T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Harður ˈTeknō","id":"016","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"harder_tekno","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-07-31T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"EXCO EP","id":"017","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"exco","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-05T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Harmonious Interaction of Patterns (Remixes)","id":"018","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"hiop_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-19T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Uhhhhhhh","id":"019","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"uhhhhhhh","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-19T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Ganymede & The Late Heavy Bombardment","id":"020","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"ganymede","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2018-10-26T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"EXCO Remixes EP","id":"021","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"exco_remixes","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2019-03-08T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}},{"name":"Daegu Acid EP","id":"022","primary_artist":"","additional_artists":["",""],"features":[""],"cover_art":"daegu_acid","additional_images":["","",""],"short_desc":"","info_p":"","release_date":"2019-04-26T18:25:43.511Z","already_released":true,"release_info":{"recorded":"","vocals":"","produced":"","studio":"","mixed":"","mastered":""},"song_list":["",""],"release_links":{"spotify":"","itunes":"","apple_music":"","beatport":"","soundcloud":"","bandcamp":"","tidal":"","choon":""}}],"label_socials":[{"name":"instagram","short_name":"in","url":"https://www.instagram.com/","icon":""},{"name":"facebook","short_name":"fb","url":"https://www.facebook.com/","icon":""},{"name":"twitter","short_name":"tw","url":"https://www.twitter.com/","icon":""}],"label_streaming":[{"name":"spotify","short_name":"sp","url":"https://open.spotify.com","icon":""},{"name":"apple music","short_name":"am","url":"","icon":""},{"name":"itunes","short_name":"it","url":"","icon":""},{"name":"beatport","short_name":"bp","url":"","icon":""},{"name":"bandcamp","short_name":"bc","url":"","icon":""},{"name":"soundcloud","short_name":"sc","url":"","icon":""},{"name":"choon","short_name":"ch","url":"","icon":""}]};
 
 /***/ }),
 

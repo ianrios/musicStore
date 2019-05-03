@@ -3,6 +3,9 @@
     "artist_types": ["all", "individuals", "groups"],
     "label": "WHY? Record Company",
     "short_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "long_descriptions": [
+        "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets, but fire up your browser. Strategic high-level 30,000 ft view. Drill down re-inventing the wheel at the end of the day but curate imagineer, or to be inspired is to become creative."
+    ],
     "roles": [
         "label manager",
         "studio manager",
@@ -773,12 +776,6 @@
             "name": "twitter",
             "short_name": "tw",
             "url": "https://www.twitter.com/",
-            "icon": ""
-        },
-        {
-            "name": "discord",
-            "short_name": "dc",
-            "url": "https://www.discordapp.com/",
             "icon": ""
         }
     ],
