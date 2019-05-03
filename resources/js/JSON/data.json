@@ -2,9 +2,11 @@
     "curr_view": 0,
     "artist_types": ["all", "individuals", "groups"],
     "label": "WHY? Record Company",
-    "short_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "short_description": "WHY? is a collective of minds, an exclusive A-V-M-B experience headed by forward thinking creatives. Head to artists or releases to learn more.",
     "long_descriptions": [
-        "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets, but fire up your browser. Strategic high-level 30,000 ft view. Drill down re-inventing the wheel at the end of the day but curate imagineer, or to be inspired is to become creative."
+        "Each artist is picked by hand, each designer is decided on by committee. We pride ourselves in being one of the most restrictive label in the world. ",
+        "Our music is currently avaliable everywhere, and soon to be hosted on this site.",
+        "Check back for new updates reguluary, and please email the webmaster if you find any bugs."
     ],
     "roles": [
         "label manager",
@@ -29,8 +31,8 @@
             "anchor": "whythough",
             "profile": "whythough_4x6.jpg",
             "additional_images": [],
-            "short_desc": "High in fiber and good for your heart",
-            "bio": "whythough Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents."
+            "short_desc": "Nothing is impossible. By condensing, we exist.",
+            "bio": "You and I are messengers of the world. By redefining, we vibrate. Reality has always been beaming with messengers whose hopes are transformed into stardust. Who are we? Where on the great quest will we be aligned? The universe is approaching a tipping point. The future will be an ever-present awakening of flow. We are being called to explore the dreamtime itself as an interface between energy and beauty."
         },
         {
             "name": "dyl_pykl",
@@ -40,7 +42,7 @@
             "profile": "dyl_pykl_4x6.jpg",
             "additional_images": [],
             "short_desc": "Space, the final frontier. ",
-            "bio": "Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank."
+            "bio": "This circuit never ends. The unifying of interconnectedness is now happening worldwide. We are being called to explore the biosphere itself as an interface between purpose and growth. Yes, it is possible to extinguish the things that can disrupt us, but not without interconnectedness on our side. You may be ruled by materialism without realizing it. Do not let it shatter the truth of your myth. Desire is the antithesis of conscious living. It is in unfolding that we are reborn. It is a sign of things to come. Imagine a deepening of what could be."
         },
         {
             "name": "svnteen",
@@ -49,8 +51,8 @@
             "anchor": "svnteen",
             "profile": "svnteen_4x6.jpg",
             "additional_images": [],
-            "short_desc": "Busey ipsum dolor sit amet. ",
-            "bio": "Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake."
+            "short_desc": "The infinite is calling to you via molecular structures. Can you hear it?",
+            "bio": "By unfolding, we vibrate. Nothing is impossible. The infinite is bursting with ultra-sentient particles. We are in the midst of a high-frequency blossoming of guidance that will give us access to the multiverse itself. Reality has always been buzzing with lifeforms whose hopes are baptized in fulfillment. We are at a crossroads of power and suffering."
         }
     ],
     "releases": [

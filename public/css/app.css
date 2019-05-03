@@ -292,7 +292,6 @@ nav a {
   overflow-x: hidden;
   overflow-y: scroll;
   min-width: 0;
-  /* NEW; needed for Firefox */
 }
 
 #main_page_links {
@@ -311,15 +310,28 @@ img {
   height: 0.7em;
 }
 
-#bg_img_cycle,
-#cycle_page_p {
+#cycle_inderimage {
+  background: url("/img/final_album_view_cycle001.png") no-repeat;
+  background-size: 100%;
   width: 70%;
-  display: block;
+  height: 100%;
   margin: auto;
+  text-align: center;
+}
+
+#cycle_page p {
+  height: auto;
+  text-align: center;
 }
 
 #cycle_page_header1 {
-  color: #ff206e;
+  height: auto;
   text-align: center;
+}
+
+#bg_img_cycle {
+  width: 70%;
+  display: block;
+  margin: auto;
 }
 
