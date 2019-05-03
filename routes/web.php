@@ -11,26 +11,21 @@
 |
  */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () { return view('index'); });
 
-Route::get('/artists', function () {
-	return view('artists');
-});
+Route::get('/', 'index@show');
 
-Route::get('/releases', function () {
-	return view('releases');
-});
+//Route::get('/artists', function () { return view('artists'); });
+Route::get('/artists', 'artists@show');
 
-Route::get('/contact', function () {
-	return view('contact');
-});
+// Route::get('/releases', function () { return view('releases'); });
+Route::get('/releases', 'releases@show');
 
-Route::get('/CYCLE', function () {
-	return view('cycle');
-});
+// Route::get('/contact', function () { return view('contact'); });
+Route::get('/contact', 'contact@show');
 
-Route::get('/comingsoon', function () {
-	return view('comingsoon');
-});
+// Route::get('/CYCLE', function () { return view('cycle'); });
+Route::get('/CYCLE', 'CYCLE@show');
+
+// Route::get('/comingsoon', function () { return view('comingsoon'); });
+Route::get('/comingsoon', 'comingsoon@show');
