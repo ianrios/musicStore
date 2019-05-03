@@ -1,15 +1,15 @@
 <template>
     <div class="container" id="artists_page">
         <h1 id="artists_page_title">Artists</h1>
-        <p
-            id="artists_page_info"
-        >tell me what i can do to add cool functionality to this page, filtering/general cool ways to display the info</p>
-        <artist-component
-            v-for="artist in artists"
-            :key="artist.name"
-            id="artists_page_name"
-            :artist="artist"
-        />
+        <p id="artists_page_info">Each artist has many roles-> coming soon</p>
+        <div id="artists_views">
+            <artist-component
+                v-for="artist in artists"
+                :key="artist.name"
+                id="artists_page_name"
+                :artist="artist"
+            />
+        </div>
         <!-- artist filter 
 				all, individual, groups
 				role_type,

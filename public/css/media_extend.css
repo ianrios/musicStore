@@ -240,6 +240,12 @@ iPad 3
     #main_page_header3 {
         font-size: 60px;
     }
+    #main_page_header1 {
+        padding-top: 50vh;
+    }
+    #header_main_page {
+        display: inline;
+    }
     #header_main_page a {
         padding-top: 20px;
         font-size: 30px;
@@ -262,6 +268,9 @@ iPad 3
         margin-left: 10px;
     }
 
+    #main_background h1 {
+        padding-bottom: 50px;
+    }
     #main_background a,
     #main_background h1 {
         color: #7a6c5d;
@@ -270,10 +279,22 @@ iPad 3
     #main_background h1 {
         font-size: 75px;
         margin-top: 10vh;
-        padding-top: 1vh;
+        padding-top: 5vh;
         /* padding-top: calc(25vh);
         padding-top: -moz-calc(25vh);
         padding-top: -webkit-calc(25vh); */
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
+
+    #releases_views,
+    #artists_views {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-row-gap: 10px;
+        grid-column-gap: 100px;
+        margin: 100px;
+    }
+    /* #releases_page_component {
+    } */
 }

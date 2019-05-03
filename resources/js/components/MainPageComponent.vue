@@ -12,13 +12,30 @@
         -->
         <div id="main_page_second" v-else-if="curr_view == 1">
             <div id="header_main_page">
-                <h3 id="main_page_header3">{{label}}</h3>
-                <a
-                    id="main_page_back"
-                    href="#"
-                    @click="updatePage(0)"
-                    aria-label="Back to main view"
-                >&lt;</a>
+                <h3 id="main_page_header3">
+                    <a
+                        id="main_page_back"
+                        href="#"
+                        @click="updatePage(0)"
+                        aria-label="Back to main view"
+                    >
+                        <svg
+                            id="i-chevron-left"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                            width="32"
+                            height="32"
+                            fill="none"
+                            stroke="currentcolor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                        >
+                            <path d="M20 30 L8 16 20 2"></path>
+                        </svg>
+                    </a>
+                    {{label}}
+                </h3>
             </div>
             <div id="main_text">
                 <p id="main_page_short_desc">{{short_description}}</p>
