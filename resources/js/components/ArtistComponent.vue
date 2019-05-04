@@ -12,6 +12,7 @@
 export default {
     mounted() {
         console.log("Artist Component mounted.");
+        // "Each artist is picked by hand, each designer is decided on by committee. We pride ourselves in being one of the most restrictive label in the world. ",
     },
     props: {
         artist: Object
