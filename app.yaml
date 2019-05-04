@@ -21,10 +21,10 @@ env_variables:
     DB_CONNECTION: mysql
     DB_HOST: localhost
     DB_POST: 3306
-    DB_DATABASE: instance_id
+    DB_DATABASE: test
     DB_USERNAME: root
     DB_PASSWORD: BW9c24F9zjTXeBj
-    DB_SOCKET: /cloudsql/evocative-lodge-238115:us-central1:musicstore-evocative-lounge
+    DB_SOCKET: /cloudsql/musicstore-evocative-lounge
     QUEUE_DRIVER: database #in case you execute queued jobs
     MAIL_DRIVER: smtp
     MAIL_HOST: smtp.sparkpostmail.com
