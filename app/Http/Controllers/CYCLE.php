@@ -10,6 +10,6 @@ class CYCLE extends Controller
 	//
 	public function show()
     {
-        return view('CYCLE');
+        return view('cycle');
     }
 }

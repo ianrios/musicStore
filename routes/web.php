@@ -24,8 +24,8 @@ Route::get('/releases', 'releases@show');
 // Route::get('/contact', function () { return view('contact'); });
 Route::get('/contact', 'contact@show');
 
-// Route::get('/CYCLE', function () { return view('cycle'); });
-Route::get('/CYCLE', 'CYCLE@show');
+Route::get('/CYCLE', function () { return view('cycle'); });
+// Route::get('/cycle', 'cycle@show');
 
 // Route::get('/comingsoon', function () { return view('comingsoon'); });
 Route::get('/comingsoon', 'comingsoon@show');
