@@ -44,12 +44,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', '35.226.77.53'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'test'),
+            'database' => env('DB_DATABASE', 'musicstore-evocative-lounge'),
             'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', 'root'),
-            'unix_socket' => env('DB_SOCKET', ''),
+            'password' => env('DB_PASSWORD', 'BW9c24F9zjTXeBj'),
+            'unix_socket' => env('DB_SOCKET', '/cloudsql/musicstore-evocative-lounge'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
