@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CYCLE extends Controller
+class cycle extends Controller
 {
 	
 	//
