@@ -13,7 +13,7 @@
 	<meta name="keywords" content="why, record, company, music, edm, techno, idm, experimental, whythough" />
 
 	<meta property="og:image" content="/img/meta.jpg">
-	<meta property="og:site_name" content="WHY? Record Compnay">
+	<meta property="og:site_name" content="WHY? Record Company">
 	<meta property="og:title" content="WHY? Record Company">
 
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -49,7 +49,7 @@
 </head>
 
 <body>
-	{{-- add css grid --}} {{-- convert to vue nav component --}}
+	{{-- convert to vue nav component --}}
 	<header>
 		<h1 id="brand">
 			<a id="nav-content" class="navbar-brand" href="/">
@@ -74,10 +74,6 @@
 		@yield('content')
 	</div>
 
-	<!-- <script src="js/imagesloaded.pkgd.min.js"></script> -->
-	<!-- <script src="js/charming.min.js"></script> -->
-	<!-- <script src="js/TweenMax.min.js"></script> -->
-	<!-- <script src="js/demo1.js"></script> -->
 	<script src="js/app.js"></script>
 
 	<!-- <script>
