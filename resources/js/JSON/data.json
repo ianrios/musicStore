@@ -53,6 +53,26 @@
             "additional_images": [],
             "short_desc": "The infinite is calling to you via molecular structures. Can you hear it?",
             "bio": "By unfolding, we vibrate. Nothing is impossible. The infinite is bursting with ultra-sentient particles. We are in the midst of a high-frequency blossoming of guidance that will give us access to the multiverse itself. Reality has always been buzzing with lifeforms whose hopes are baptized in fulfillment. We are at a crossroads of power and suffering."
+        },
+        {
+            "name": "stratosfear",
+            "id": 3,
+            "num_artists": 1,
+            "anchor": "stratosfear",
+            "profile": "stratosfear_4x6.jpg",
+            "additional_images": [],
+            "short_desc": "iridosiclitus",
+            "bio": "wowee"
+        },
+        {
+            "name": "fohrenbach",
+            "id": 4,
+            "num_artists": 1,
+            "anchor": "fohrenbach",
+            "profile": "fohrenbach_4x6.jpg",
+            "additional_images": [],
+            "short_desc": "inner me",
+            "bio": "is outside"
         }
     ],
     "releases": [
@@ -356,6 +376,105 @@
             "info_p": "By fusing the power of online streaming with the immersiveness of live DJ mix albums, WHY? Record Company presents the CYCLE series: a loopable mix album that allows the listener to play on repeat, starting at any point in time, ending whenever.",
             "release_date": "2019-05-17T00:00:00.511Z",
             "already_released": true,
+            "release_info": {
+                "recorded": "",
+                "vocals": "",
+                "produced": "",
+                "studio": "",
+                "mixed": "",
+                "mastered": ""
+            },
+            "song_list": ["", ""],
+            "release_links": {
+                "spotify": "",
+                "itunes": "",
+                "apple_music": "",
+                "beatport": "",
+                "soundcloud": "",
+                "bandcamp": "",
+                "tidal": "",
+                "choon": ""
+            }
+        },
+        {
+            "name": "h a d e s",
+            "id": "024",
+            "landing": "cycle",
+            "primary_artist": "svnteen",
+            "additional_artists": ["", ""],
+            "features": [""],
+            "cover_art": "hades",
+            "additional_images": ["", "", ""],
+            "short_desc": "hades",
+            "info_p": "wave",
+            "release_date": "2019-05-17T00:00:00.511Z",
+            "already_released": true,
+            "release_info": {
+                "recorded": "",
+                "vocals": "",
+                "produced": "",
+                "studio": "",
+                "mixed": "",
+                "mastered": ""
+            },
+            "song_list": ["", ""],
+            "release_links": {
+                "spotify": "",
+                "itunes": "",
+                "apple_music": "",
+                "beatport": "",
+                "soundcloud": "",
+                "bandcamp": "",
+                "tidal": "",
+                "choon": ""
+            }
+        },
+        {
+            "name": "cycle002: sleep",
+            "id": "025",
+            "landing": "cycle",
+            "primary_artist": "svnteen",
+            "additional_artists": ["", ""],
+            "features": [""],
+            "cover_art": "cycle002",
+            "additional_images": ["", "", ""],
+            "short_desc": "cyclic album series",
+            "info_p": "By fusing the power of online streaming with the immersiveness of live DJ mix albums, WHY? Record Company presents the CYCLE series: a loopable mix album that allows the listener to play on repeat, starting at any point in time, ending whenever.",
+            "release_date": "2019-06-17T00:00:00.511Z",
+            "already_released": false,
+            "release_info": {
+                "recorded": "",
+                "vocals": "",
+                "produced": "",
+                "studio": "",
+                "mixed": "",
+                "mastered": ""
+            },
+            "song_list": ["", ""],
+            "release_links": {
+                "spotify": "",
+                "itunes": "",
+                "apple_music": "",
+                "beatport": "",
+                "soundcloud": "",
+                "bandcamp": "",
+                "tidal": "",
+                "choon": ""
+            }
+        },
+        {
+            "name": "Catapult",
+            "id": "026",
+            "landing": "catapult",
+            "primary_artist": "dyl_pykl",
+            "additional_artists": ["whythough?", ""],
+            "features": ["Katie Hoffstatter"],
+            "cover_art": "catapult",
+            "additional_images": ["", "", ""],
+            "short_desc": "catapult",
+            "info_p": "summer drum and bass",
+            "release_date": "2019-06-17T00:00:00.511Z",
+            "already_released": false,
             "release_info": {
                 "recorded": "",
                 "vocals": "",

@@ -39,7 +39,7 @@
             </div>
             <div id="main_text">
                 <p id="main_page_short_desc">{{short_description}}</p>
-                <p v-for="d in long_descriptions" id="main_page_long_desc">{{d}}</p>
+                <p v-for="d in long_descriptions" id="main_page_long_desc" :key="d">{{d}}</p>
             </div>
             <div id="main_page_links">
                 <a
