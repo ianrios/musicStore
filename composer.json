@@ -20,7 +20,8 @@
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5",
-        "symfony/thanks": "^1.0"
+        "symfony/thanks": "^1.0",
+        "phpspec/phpspec": "2.2.1"
     },
     "extra": {
         "laravel": {
@@ -68,5 +69,7 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
