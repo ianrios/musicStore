@@ -35,3 +35,9 @@ export default {
     }
 };
 </script>
+<style scoped>
+img {
+    padding-left: 300px;
+    padding-right: 300px;
+}
+</style>

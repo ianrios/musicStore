@@ -32,7 +32,12 @@ a:visited {
 
 a:hover,
 a:active,
-a.active {
+a.active,
+#brand a:active,
+#brand a:hover,
+#nav-li a:active,
+#nav-li a:hover,
+.nav-toggle:checked ~ label span {
   color: #b68f40;
 }
 
@@ -60,13 +65,6 @@ header {
 #nav-li a:link,
 #nav-li a:visited {
   color: #dee5e5;
-}
-
-#brand a:active,
-#brand a:hover,
-#nav-li a:active,
-#nav-li a:hover {
-  color: #b68f40;
 }
 
 .nav-toggle {
@@ -140,10 +138,6 @@ nav a {
   /* Opera */
   -ms-transition: opacity 250ms ease-in-out;
   /* Explorer 10 */
-}
-
-.nav-toggle:checked ~ label span {
-  color: #b68f40;
 }
 
 .nav-toggle:checked ~ nav {

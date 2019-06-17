@@ -59,7 +59,7 @@
             "id": 3,
             "num_artists": 1,
             "anchor": "stratosfear",
-            "profile": "stratosfear_4x6.jpg",
+            "profile": "profile_4x6.jpg",
             "additional_images": [],
             "short_desc": "iridosiclitus",
             "bio": "wowee"
@@ -69,7 +69,7 @@
             "id": 4,
             "num_artists": 1,
             "anchor": "fohrenbach",
-            "profile": "fohrenbach_4x6.jpg",
+            "profile": "profile_4x6.jpg",
             "additional_images": [],
             "short_desc": "inner me",
             "bio": "is outside"
@@ -399,7 +399,7 @@
         {
             "name": "h a d e s",
             "id": "024",
-            "landing": "cycle",
+            "landing": "#",
             "primary_artist": "svnteen",
             "additional_artists": ["", ""],
             "features": [""],
@@ -465,7 +465,7 @@
         {
             "name": "Catapult",
             "id": "026",
-            "landing": "catapult",
+            "landing": "#",
             "primary_artist": "dyl_pykl",
             "additional_artists": ["whythough?", ""],
             "features": ["Katie Hoffstatter"],

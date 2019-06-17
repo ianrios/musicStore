@@ -53,7 +53,12 @@ a:visited {
 }
 a:hover,
 a:active,
-a.active {
+a.active,
+#brand a:active,
+#brand a:hover,
+#nav-li a:active,
+#nav-li a:hover,
+.nav-toggle:checked ~ label span {
     color: $brass;
 }
 
@@ -79,12 +84,7 @@ header {
 #nav-li a:visited {
     color: $platinum;
 }
-#brand a:active,
-#brand a:hover,
-#nav-li a:active,
-#nav-li a:hover {
-    color: $brass;
-}
+
 .nav-toggle {
     display: none;
     margin-left: 1em;
@@ -138,10 +138,6 @@ nav {
         -o-transition: opacity $a_speed_in ease-in-out; /* Opera */
         -ms-transition: opacity $a_speed_in ease-in-out; /* Explorer 10 */
     }
-}
-
-.nav-toggle:checked ~ label span {
-    color: $brass;
 }
 
 .nav-toggle:checked ~ nav {
