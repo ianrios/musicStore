@@ -59,11 +59,31 @@
 		<input type="checkbox" id="nav-toggle" class="nav-toggle">
 		<nav class="nav" id="nav-header">
 			<ul>
-				<li id="nav-li"><a id="nav-content" class="nav-link" href="artists">Artists</a></li>
-				<li id="nav-li"><a id="nav-content" class="nav-link" href="releases">Releases</a></li>
-				<li id="nav-li"><a id="nav-content" class="nav-link" href="comingsoon">Store</a></li>
-				<li id="nav-li"><a id="nav-content" class="nav-link" href="comingsoon">Services</a></li>
-				<li id="nav-li"><a id="nav-content" class="nav-link" href="contact">Contact Us</a></li>
+				<li id="nav-li">
+					<a id="nav-content" class="nav-link" href="artists">
+						<img src="svg/artist-icon.svg" alt="artists-icon">
+					</a>
+				</li>
+				<li id="nav-li">
+					<a id="nav-content" class="nav-link" href="releases">
+						<img src="svg/database-icon.svg" alt="database-icon">
+					</a>
+				</li>
+				<li id="nav-li">
+					<a id="nav-content" class="nav-link" href="comingsoon">
+						<img src="svg/barcode-icon.svg" alt="barcode-icon">
+					</a>
+				</li>
+				<li id="nav-li">
+					<a id="nav-content" class="nav-link" href="comingsoon">
+						<img src="svg/contact-icon.svg" alt="contact-icon">
+					</a>
+				</li>
+				<li id="nav-li">
+					<a id="nav-content" class="nav-link" href="contact">
+						<img src="svg/services-icon.svg" alt="services-icon">
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<label for="nav-toggle" class="nav-toggle-label">

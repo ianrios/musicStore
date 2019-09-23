@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 41">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:white;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <title>
+        database-icon
+    </title>
+    <ellipse class="cls-1" cx="30.5" cy="20.5" rx="30" ry="5.81"/>
+    <ellipse class="cls-1" cx="30.5" cy="6.31" rx="30" ry="5.81"/>
+    <ellipse class="cls-1" cx="30.5" cy="34.69" rx="30" ry="5.81"/>
+    <path class="cls-1" d="M45,44a3.59,3.59,0,0,0-1.9-2.49" transform="translate(-19.5 -29.5)"/>
+    <path class="cls-1" d="M55,44a3.59,3.59,0,0,1,1.9-2.49" transform="translate(-19.5 -29.5)"/>
+    <path class="cls-1" d="M44.54,58.25a3.64,3.64,0,0,0-1.91-2.5" transform="translate(-19.5 -29.5)"/>
+    <path class="cls-1" d="M54.54,58.25a3.63,3.63,0,0,1,1.9-2.5" transform="translate(-19.5 -29.5)"/>
+</svg>
